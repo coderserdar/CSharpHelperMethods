@@ -72,7 +72,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// </summary>
         /// <param name="text">Kullanıcı Şifresi</param>
         /// <returns>Şifrenin Uygun Olup Olmadığı Bilgisi (Açıklaması ile beraber)</returns>
-        public static List<string> SifreUygunMu(string text)
+        public static string SifreUygunMu(string text)
         {
             //bu kısımda şifrenin olması gereken koşulları değerlendirilecek.
             List<string> mesajlar = new List<string>();
@@ -92,7 +92,16 @@ namespace CSharpHelperMethods.YardimciSiniflar
             if (!Regex.IsMatch(text, @"^(?=.*[0-9])", RegexOptions.ECMAScript))
                 mesajlar.Add("Parola en az bir rakam içermelidir.");
 
-            return mesajlar.Count == 0 ? null : mesajlar;
+            if (mesajlar.Count < 1)
+                return "Uygun";
+            else
+            {
+                var sonuc = "";
+                foreach (var item in mesajlar)
+                    sonuc += item + ", ";
+                sonuc = sonuc.Substring(0, sonuc.Length - 2);
+                return sonuc;
+            }
         }
 
         /// <summary>

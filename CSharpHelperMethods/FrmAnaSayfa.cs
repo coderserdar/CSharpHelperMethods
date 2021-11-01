@@ -14,14 +14,26 @@ namespace CSharpHelperMethods
         private void FrmAnaSayfa_Load(object sender, System.EventArgs e)
         {
             pnlTarihIslemleri.Enabled = false;
+            pnlSifreIslemleri.Enabled = false;
         }
 
         private void cmbIslemTuru_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             if (cmbIslemTuru.SelectedIndex == 1)
+            {
                 pnlTarihIslemleri.Enabled = true;
-            else
+                pnlSifreIslemleri.Enabled = false;
+            }
+            else if (cmbIslemTuru.SelectedIndex == 3)
+            {
                 pnlTarihIslemleri.Enabled = false;
+                pnlSifreIslemleri.Enabled = true;
+            }
+            else
+            {
+                pnlTarihIslemleri.Enabled = false;
+                pnlSifreIslemleri.Enabled = false;
+            }
         }
 
         #region Tarih İşlemleri
@@ -70,5 +82,71 @@ namespace CSharpHelperMethods
         }
         #endregion
 
+        #region Şifre İşlemleri
+        private void btnMd5Hash_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
+                MessageBox.Show("Şifrelenecek metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbSifreSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Girilen Metnin MD5 Karşılığı: ");
+                sb.Append(SifrelemeIslemleri.HesaplaMD5(txtSifrelenecekMetin.Text.Trim()));
+                lbSifreSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnSha256Hash_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
+                MessageBox.Show("Şifrelenecek metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbSifreSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Girilen Metnin SHA 256 Karşılığı: ");
+                sb.Append(SifrelemeIslemleri.HesaplaSHA256(txtSifrelenecekMetin.Text.Trim()));
+                lbSifreSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnSha512Hash_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
+                MessageBox.Show("Şifrelenecek metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbSifreSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Girilen Metnin SHA 512 Karşılığı: ");
+                sb.Append(SifrelemeIslemleri.HesaplaSHA512(txtSifrelenecekMetin.Text.Trim()));
+                lbSifreSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnRastgeleSifreUret_Click(object sender, System.EventArgs e)
+        {
+            lbSifreSonuc.Items.Clear();
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Rastgele Üretilen Şifre: ");
+            sb.Append(SifrelemeIslemleri.RastgeleSifreUret());
+            lbSifreSonuc.Items.Add(sb.ToString());
+        }
+
+        private void btnSifreUygunMu_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
+                MessageBox.Show("Şifre metni girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbSifreSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Girilen Şifrenin Uygunluk Durumu: ");
+                sb.Append(SifrelemeIslemleri.SifreUygunMu(txtSifrelenecekMetin.Text.Trim()));
+                lbSifreSonuc.Items.Add(sb.ToString());
+            }
+        }
+        #endregion
     }
 }

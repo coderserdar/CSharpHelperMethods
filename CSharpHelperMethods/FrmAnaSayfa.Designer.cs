@@ -40,7 +40,18 @@
             this.dtpBaslangicTarihi = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlSifreIslemleri = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtSifrelenecekMetin = new System.Windows.Forms.TextBox();
+            this.btnMd5Hash = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbSifreSonuc = new System.Windows.Forms.ListBox();
+            this.btnSha256Hash = new System.Windows.Forms.Button();
+            this.btnSha512Hash = new System.Windows.Forms.Button();
+            this.btnRastgeleSifreUret = new System.Windows.Forms.Button();
+            this.btnSifreUygunMu = new System.Windows.Forms.Button();
             this.pnlTarihIslemleri.SuspendLayout();
+            this.pnlSifreIslemleri.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbIslemTuru
@@ -168,21 +179,125 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Başlangıç Tarihi";
             // 
-            // FrmMainPage
+            // pnlSifreIslemleri
+            // 
+            this.pnlSifreIslemleri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSifreIslemleri.Controls.Add(this.btnSifreUygunMu);
+            this.pnlSifreIslemleri.Controls.Add(this.btnRastgeleSifreUret);
+            this.pnlSifreIslemleri.Controls.Add(this.btnSha512Hash);
+            this.pnlSifreIslemleri.Controls.Add(this.btnSha256Hash);
+            this.pnlSifreIslemleri.Controls.Add(this.label6);
+            this.pnlSifreIslemleri.Controls.Add(this.lbSifreSonuc);
+            this.pnlSifreIslemleri.Controls.Add(this.btnMd5Hash);
+            this.pnlSifreIslemleri.Controls.Add(this.txtSifrelenecekMetin);
+            this.pnlSifreIslemleri.Controls.Add(this.label5);
+            this.pnlSifreIslemleri.Location = new System.Drawing.Point(453, 61);
+            this.pnlSifreIslemleri.Name = "pnlSifreIslemleri";
+            this.pnlSifreIslemleri.Size = new System.Drawing.Size(335, 174);
+            this.pnlSifreIslemleri.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Şifrelenecek Metin";
+            // 
+            // txtSifrelenecekMetin
+            // 
+            this.txtSifrelenecekMetin.Location = new System.Drawing.Point(119, 6);
+            this.txtSifrelenecekMetin.Name = "txtSifrelenecekMetin";
+            this.txtSifrelenecekMetin.Size = new System.Drawing.Size(199, 20);
+            this.txtSifrelenecekMetin.TabIndex = 4;
+            // 
+            // btnMd5Hash
+            // 
+            this.btnMd5Hash.Location = new System.Drawing.Point(21, 42);
+            this.btnMd5Hash.Name = "btnMd5Hash";
+            this.btnMd5Hash.Size = new System.Drawing.Size(75, 23);
+            this.btnMd5Hash.TabIndex = 11;
+            this.btnMd5Hash.Text = "MD5";
+            this.btnMd5Hash.UseVisualStyleBackColor = true;
+            this.btnMd5Hash.Click += new System.EventHandler(this.btnMd5Hash_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(74, 104);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Sonuç";
+            // 
+            // lbSifreSonuc
+            // 
+            this.lbSifreSonuc.FormattingEnabled = true;
+            this.lbSifreSonuc.HorizontalScrollbar = true;
+            this.lbSifreSonuc.Location = new System.Drawing.Point(118, 100);
+            this.lbSifreSonuc.Name = "lbSifreSonuc";
+            this.lbSifreSonuc.Size = new System.Drawing.Size(200, 69);
+            this.lbSifreSonuc.TabIndex = 12;
+            // 
+            // btnSha256Hash
+            // 
+            this.btnSha256Hash.Location = new System.Drawing.Point(131, 42);
+            this.btnSha256Hash.Name = "btnSha256Hash";
+            this.btnSha256Hash.Size = new System.Drawing.Size(75, 23);
+            this.btnSha256Hash.TabIndex = 14;
+            this.btnSha256Hash.Text = "SHA 256";
+            this.btnSha256Hash.UseVisualStyleBackColor = true;
+            this.btnSha256Hash.Click += new System.EventHandler(this.btnSha256Hash_Click);
+            // 
+            // btnSha512Hash
+            // 
+            this.btnSha512Hash.Location = new System.Drawing.Point(243, 42);
+            this.btnSha512Hash.Name = "btnSha512Hash";
+            this.btnSha512Hash.Size = new System.Drawing.Size(75, 23);
+            this.btnSha512Hash.TabIndex = 15;
+            this.btnSha512Hash.Text = "SHA 512";
+            this.btnSha512Hash.UseVisualStyleBackColor = true;
+            this.btnSha512Hash.Click += new System.EventHandler(this.btnSha512Hash_Click);
+            // 
+            // btnRastgeleSifreUret
+            // 
+            this.btnRastgeleSifreUret.Location = new System.Drawing.Point(21, 71);
+            this.btnRastgeleSifreUret.Name = "btnRastgeleSifreUret";
+            this.btnRastgeleSifreUret.Size = new System.Drawing.Size(145, 23);
+            this.btnRastgeleSifreUret.TabIndex = 16;
+            this.btnRastgeleSifreUret.Text = "Rastgele Şifre Üret";
+            this.btnRastgeleSifreUret.UseVisualStyleBackColor = true;
+            this.btnRastgeleSifreUret.Click += new System.EventHandler(this.btnRastgeleSifreUret_Click);
+            // 
+            // btnSifreUygunMu
+            // 
+            this.btnSifreUygunMu.Location = new System.Drawing.Point(173, 71);
+            this.btnSifreUygunMu.Name = "btnSifreUygunMu";
+            this.btnSifreUygunMu.Size = new System.Drawing.Size(145, 23);
+            this.btnSifreUygunMu.TabIndex = 17;
+            this.btnSifreUygunMu.Text = "Şifre Uygun Mu?";
+            this.btnSifreUygunMu.UseVisualStyleBackColor = true;
+            this.btnSifreUygunMu.Click += new System.EventHandler(this.btnSifreUygunMu_Click);
+            // 
+            // FrmAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlSifreIslemleri);
             this.Controls.Add(this.pnlTarihIslemleri);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbIslemTuru);
-            this.Name = "FrmMainPage";
+            this.Name = "FrmAnaSayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İşlemler Ekranı";
             this.Load += new System.EventHandler(this.FrmAnaSayfa_Load);
             this.pnlTarihIslemleri.ResumeLayout(false);
             this.pnlTarihIslemleri.PerformLayout();
+            this.pnlSifreIslemleri.ResumeLayout(false);
+            this.pnlSifreIslemleri.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,6 +317,16 @@
         private System.Windows.Forms.Button btnYasHesapla;
         private System.Windows.Forms.Button btnYasHesaplaMetinsel;
         private System.Windows.Forms.Button btnTarihAraligi;
+        private System.Windows.Forms.Panel pnlSifreIslemleri;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtSifrelenecekMetin;
+        private System.Windows.Forms.Button btnMd5Hash;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ListBox lbSifreSonuc;
+        private System.Windows.Forms.Button btnSha256Hash;
+        private System.Windows.Forms.Button btnSha512Hash;
+        private System.Windows.Forms.Button btnRastgeleSifreUret;
+        private System.Windows.Forms.Button btnSifreUygunMu;
     }
 }
 
