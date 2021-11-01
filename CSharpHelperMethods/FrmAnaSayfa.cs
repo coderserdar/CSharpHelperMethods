@@ -1,4 +1,4 @@
-﻿using CSharpHelperMethods.HelperClasses;
+﻿using CSharpHelperMethods.YardimciSiniflar;
 using System.Text;
 using System.Windows.Forms;
 
@@ -69,5 +69,6 @@ namespace CSharpHelperMethods
             }
         }
         #endregion
+
     }
 }

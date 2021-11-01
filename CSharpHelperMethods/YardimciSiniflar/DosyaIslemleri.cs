@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharpHelperMethods.HelperClasses
+namespace CSharpHelperMethods.YardimciSiniflar
 {
     /// <summary>
     /// Dosya işlemleri ile ilgili yardımıcı sınıf

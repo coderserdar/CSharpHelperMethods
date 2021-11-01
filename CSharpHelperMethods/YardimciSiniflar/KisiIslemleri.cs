@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CSharpHelperMethods.HelperClasses
+namespace CSharpHelperMethods.YardimciSiniflar
 {
     /// <summary>
     /// Kişi ile ilişkili yardımcı metotların tamamını içeren sınıf

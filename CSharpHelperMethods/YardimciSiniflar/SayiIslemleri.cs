@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text;
 
-namespace CSharpHelperMethods.HelperClasses
+namespace CSharpHelperMethods.YardimciSiniflar
 {
     /// <summary>
     /// Sayısal veri kontrol metotlarını barındıran sınıf

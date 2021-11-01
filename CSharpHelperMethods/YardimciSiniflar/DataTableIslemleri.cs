@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Reflection;
 
-namespace CSharpHelperMethods.HelperClasses
+namespace CSharpHelperMethods.YardimciSiniflar
 {
     /// <summary>
     /// Raporlama için lazım olan DataTable vb. verilerin düzenlenmesini sağlayan sınıflardır.

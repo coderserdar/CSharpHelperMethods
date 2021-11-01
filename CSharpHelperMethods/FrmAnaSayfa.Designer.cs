@@ -168,7 +168,7 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Başlangıç Tarihi";
             // 
-            // FrmAnaSayfa
+            // FrmMainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +177,7 @@
             this.Controls.Add(this.pnlTarihIslemleri);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbIslemTuru);
-            this.Name = "FrmAnaSayfa";
+            this.Name = "FrmMainPage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İşlemler Ekranı";
             this.Load += new System.EventHandler(this.FrmAnaSayfa_Load);

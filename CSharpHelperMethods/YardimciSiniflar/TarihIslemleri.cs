@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CSharpHelperMethods.HelperClasses
+namespace CSharpHelperMethods.YardimciSiniflar
 {
     /// <summary>
     /// Tarihsel veri kontrol metotlarını barındıran sınıf
