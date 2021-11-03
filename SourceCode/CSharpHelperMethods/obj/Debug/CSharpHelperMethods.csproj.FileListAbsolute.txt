@@ -16,3 +16,12 @@ C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\CSharpHelperMethods\obj\Deb
 C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csproj.CoreCompileInputs.cache
 C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.exe
 C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.pdb
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\bin\Debug\CSharpHelperMethods.exe
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\bin\Debug\CSharpHelperMethods.pdb
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csprojAssemblyReference.cache
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.FrmAnaSayfa.resources
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.Properties.Resources.resources
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csproj.GenerateResource.cache
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csproj.CoreCompileInputs.cache
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.exe
+C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.pdb
