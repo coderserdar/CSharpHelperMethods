@@ -82,14 +82,6 @@ namespace CSharpHelperMethods.YardimciSiniflar
         }
 
         /// <summary>
-        /// Girilen iki tarih arasında kaç ay olduğunu bulan metottur
-        /// </summary>
-        /// <param name="lValue">İlk tarih bilgisi</param>
-        /// <param name="rValue">Son tarih bilgisi</param>
-        /// <returns>Ay Farkı Bilgisi</returns>
-        public static int AyFarki(DateTime lValue, DateTime rValue) => Math.Abs((lValue.Month - rValue.Month) + 12 * (lValue.Year - rValue.Year));
-
-        /// <summary>
         /// Sadece rakamlardan oluşan 6 haneli random sayı üreten metottur.
         /// </summary>
         /// <returns>6 Haneli Onay Kodu</returns>

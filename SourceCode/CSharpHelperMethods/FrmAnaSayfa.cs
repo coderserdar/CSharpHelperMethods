@@ -80,6 +80,22 @@ namespace CSharpHelperMethods
                 lbSonuc.Items.Add(sb.ToString());
             }
         }
+
+        private void btnAyFarki_Click(object sender, System.EventArgs e)
+        {
+            if (!dtpBaslangicTarihi.Checked || !dtpBitisTarihi.Checked)
+                MessageBox.Show("Başlangıç Tarihi veya Bitiş Tarihi girilmediği için bu işlem gerçekleştirilemez");
+            else if (dtpBaslangicTarihi.Value.Date > dtpBitisTarihi.Value.Date)
+                MessageBox.Show("Başlangıç Tarihi Bitiş Tarihinden büyük olamaz");
+            else
+            {
+                lbSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Ay Farkı: ");
+                sb.Append(TarihIslemleri.AyFarki(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date));
+                lbSonuc.Items.Add(sb.ToString());
+            }
+        }
         #endregion
 
         #region Şifre İşlemleri

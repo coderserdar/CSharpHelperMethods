@@ -186,5 +186,13 @@ namespace CSharpHelperMethods.YardimciSiniflar
                 result--;
             return result;
         }
+
+        /// <summary>
+        /// Girilen iki tarih arasında kaç ay olduğunu bulan metottur
+        /// </summary>
+        /// <param name="lValue">İlk tarih bilgisi</param>
+        /// <param name="rValue">Son tarih bilgisi</param>
+        /// <returns>Ay Farkı Bilgisi</returns>
+        public static int AyFarki(DateTime lValue, DateTime rValue) => Math.Abs((lValue.Month - rValue.Month) + 12 * (lValue.Year - rValue.Year));
     }
 }

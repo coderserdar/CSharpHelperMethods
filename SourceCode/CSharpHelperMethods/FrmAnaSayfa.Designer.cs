@@ -52,6 +52,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnAyFarki = new System.Windows.Forms.Button();
             this.pnlTarihIslemleri.SuspendLayout();
             this.pnlSifreIslemleri.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             // pnlTarihIslemleri
             // 
             this.pnlTarihIslemleri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTarihIslemleri.Controls.Add(this.btnAyFarki);
             this.pnlTarihIslemleri.Controls.Add(this.label8);
             this.pnlTarihIslemleri.Controls.Add(this.btnTarihAraligi);
             this.pnlTarihIslemleri.Controls.Add(this.btnYasHesaplaMetinsel);
@@ -102,7 +104,7 @@
             // 
             this.btnTarihAraligi.Location = new System.Drawing.Point(204, 76);
             this.btnTarihAraligi.Name = "btnTarihAraligi";
-            this.btnTarihAraligi.Size = new System.Drawing.Size(113, 23);
+            this.btnTarihAraligi.Size = new System.Drawing.Size(76, 23);
             this.btnTarihAraligi.TabIndex = 10;
             this.btnTarihAraligi.Text = "Tarih Aralığı";
             this.btnTarihAraligi.UseVisualStyleBackColor = true;
@@ -305,6 +307,16 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Tarih İşlemleri";
             // 
+            // btnAyFarki
+            // 
+            this.btnAyFarki.Location = new System.Drawing.Point(286, 76);
+            this.btnAyFarki.Name = "btnAyFarki";
+            this.btnAyFarki.Size = new System.Drawing.Size(79, 23);
+            this.btnAyFarki.TabIndex = 12;
+            this.btnAyFarki.Text = "Ay Farkı";
+            this.btnAyFarki.UseVisualStyleBackColor = true;
+            this.btnAyFarki.Click += new System.EventHandler(this.btnAyFarki_Click);
+            // 
             // FrmAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +366,7 @@
         private System.Windows.Forms.Button btnSifreUygunMu;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnAyFarki;
     }
 }
 
