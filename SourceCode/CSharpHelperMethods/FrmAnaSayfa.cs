@@ -15,6 +15,7 @@ namespace CSharpHelperMethods
         {
             pnlTarihIslemleri.Enabled = false;
             pnlSifreIslemleri.Enabled = false;
+            pnlSayiIslemleri.Enabled = false;
         }
 
         private void cmbIslemTuru_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -23,16 +24,25 @@ namespace CSharpHelperMethods
             {
                 pnlTarihIslemleri.Enabled = true;
                 pnlSifreIslemleri.Enabled = false;
+                pnlSayiIslemleri.Enabled = false;
+            }
+            else if (cmbIslemTuru.SelectedIndex == 2)
+            {
+                pnlTarihIslemleri.Enabled = false;
+                pnlSifreIslemleri.Enabled = false;
+                pnlSayiIslemleri.Enabled = true;
             }
             else if (cmbIslemTuru.SelectedIndex == 3)
             {
                 pnlTarihIslemleri.Enabled = false;
                 pnlSifreIslemleri.Enabled = true;
+                pnlSayiIslemleri.Enabled = false;
             }
             else
             {
                 pnlTarihIslemleri.Enabled = false;
                 pnlSifreIslemleri.Enabled = false;
+                pnlSayiIslemleri.Enabled = false;
             }
         }
 
@@ -162,6 +172,49 @@ namespace CSharpHelperMethods
                 sb.Append(SifrelemeIslemleri.SifreUygunMu(txtSifrelenecekMetin.Text.Trim()));
                 lbSifreSonuc.Items.Add(sb.ToString());
             }
+        }
+        #endregion
+
+        #region Sayı İşlemleri
+        private void btnSayisalMi_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbSayiSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Girilen Metin Sayı Mı?: ");
+                sb.Append(SayiIslemleri.SayisalMi(txtSayi.Text.Trim()) ? "Evet" : "Hayır");
+                lbSayiSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnMetneDonustur_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else if (!SayiIslemleri.SayisalMi(txtSayi.Text.Trim().Replace(",", ".").Replace(".", "")))
+                MessageBox.Show("Girilen metin sayısal bir değer olmadığı için bu işlem gerçekleştirilemez");
+            else
+            {
+                var metinSadeceSayiKismi = txtSayi.Text.Trim();
+                decimal sayi = SayiIslemleri.SayiHalineCevir(metinSadeceSayiKismi);
+                lbSayiSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Girilen Sayının Metin Hali (Parasal): ");
+                sb.Append(SayiIslemleri.SayiyiYaziyaCevir(sayi));
+                lbSayiSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnOnayKoduOlustur_Click(object sender, System.EventArgs e)
+        {
+            lbSayiSonuc.Items.Clear();
+            StringBuilder sb = new StringBuilder();
+            sb.Append("Oluşturulan 6 haneli onay kodu: ");
+            sb.Append(SayiIslemleri.AltiHaneliOnayKoduOlustur());
+            lbSayiSonuc.Items.Add(sb.ToString());
         }
         #endregion
     }

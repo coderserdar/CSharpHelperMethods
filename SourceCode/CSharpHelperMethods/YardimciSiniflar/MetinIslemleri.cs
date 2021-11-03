@@ -146,36 +146,6 @@ namespace CSharpHelperMethods.YardimciSiniflar
             return text;
         }
 
-        /// <summary>
-        /// Ekrandan alınan string değerde virgül olduğundan ajax metodu patladığı için
-        /// Burada string olarak tutar verisi alınıyor
-        /// Ve decimala çevriliyor
-        /// </summary>
-        /// <param name="incomingValue">Girilen String Değer</param>
-        /// <returns>Decimal Değer</returns>
-        public static decimal CustomParse(string incomingValue)
-        {
-            decimal val;
-            if (incomingValue.Contains("_") || incomingValue.Contains(".") || incomingValue.Contains("."))
-            {
-                if (!decimal.TryParse(incomingValue.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val))
-                    return 0;
-                return val / 100;
-            }
-            else
-            {
-                var value = decimal.TryParse(incomingValue.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val);
-                if (value)
-                {
-                    return val;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
-        }
-
         public static string MetinIlkKarakterBuyukDigerleriKucukYap(string text) => text.First().ToString().ToUpper() + text.Substring(1);
 
         /// <summary>

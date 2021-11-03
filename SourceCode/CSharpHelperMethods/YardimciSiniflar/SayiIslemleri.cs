@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -7,7 +8,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
     /// <summary>
     /// Sayısal veri kontrol metotlarını barındıran sınıf
     /// </summary>
-    public static class SayisalVeriKontrol
+    public static class SayiIslemleri
     {
         /// <summary>
         /// Girilen bir metnin sayı olup olmadığını kontrol eden metottur.
@@ -15,6 +16,36 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <param name="text">Girdi metni</param>
         /// <returns>Girilen Metnin Sayısal Olup Olmadığı Bilgisi</returns>
         public static bool SayisalMi(string text) => text.All(char.IsNumber);
+
+        /// <summary>
+        /// Ekrandan alınan string değerde virgül olduğundan ajax metodu patladığı için
+        /// Burada string olarak tutar verisi alınıyor
+        /// Ve decimala çevriliyor
+        /// </summary>
+        /// <param name="incomingValue">Girilen String Değer</param>
+        /// <returns>Decimal Değer</returns>
+        public static decimal SayiHalineCevir(string metin)
+        {
+            decimal val;
+            if (metin.Contains("_") || metin.Contains(".") || metin.Contains("."))
+            {
+                if (!decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val))
+                    return 0;
+                return val / 100;
+            }
+            else
+            {
+                var value = decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val);
+                if (value)
+                {
+                    return val;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
 
         /// <summary>
         /// Elimizdeki tutar verilerinin

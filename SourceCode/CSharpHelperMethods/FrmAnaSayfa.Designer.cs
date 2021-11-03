@@ -53,8 +53,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnAyFarki = new System.Windows.Forms.Button();
+            this.pnlSayiIslemleri = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnOnayKoduOlustur = new System.Windows.Forms.Button();
+            this.btnMetneDonustur = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbSayiSonuc = new System.Windows.Forms.ListBox();
+            this.btnSayisalMi = new System.Windows.Forms.Button();
+            this.txtSayi = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.pnlTarihIslemleri.SuspendLayout();
             this.pnlSifreIslemleri.SuspendLayout();
+            this.pnlSayiIslemleri.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbIslemTuru
@@ -317,12 +327,104 @@
             this.btnAyFarki.UseVisualStyleBackColor = true;
             this.btnAyFarki.Click += new System.EventHandler(this.btnAyFarki_Click);
             // 
+            // pnlSayiIslemleri
+            // 
+            this.pnlSayiIslemleri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlSayiIslemleri.Controls.Add(this.label9);
+            this.pnlSayiIslemleri.Controls.Add(this.btnOnayKoduOlustur);
+            this.pnlSayiIslemleri.Controls.Add(this.btnMetneDonustur);
+            this.pnlSayiIslemleri.Controls.Add(this.label10);
+            this.pnlSayiIslemleri.Controls.Add(this.lbSayiSonuc);
+            this.pnlSayiIslemleri.Controls.Add(this.btnSayisalMi);
+            this.pnlSayiIslemleri.Controls.Add(this.txtSayi);
+            this.pnlSayiIslemleri.Controls.Add(this.label11);
+            this.pnlSayiIslemleri.Location = new System.Drawing.Point(15, 257);
+            this.pnlSayiIslemleri.Name = "pnlSayiIslemleri";
+            this.pnlSayiIslemleri.Size = new System.Drawing.Size(377, 181);
+            this.pnlSayiIslemleri.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(67, 13);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Sayı İşlemleri";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnOnayKoduOlustur
+            // 
+            this.btnOnayKoduOlustur.Location = new System.Drawing.Point(243, 42);
+            this.btnOnayKoduOlustur.Name = "btnOnayKoduOlustur";
+            this.btnOnayKoduOlustur.Size = new System.Drawing.Size(75, 23);
+            this.btnOnayKoduOlustur.TabIndex = 15;
+            this.btnOnayKoduOlustur.Text = "Onay Kodu";
+            this.btnOnayKoduOlustur.UseVisualStyleBackColor = true;
+            this.btnOnayKoduOlustur.Click += new System.EventHandler(this.btnOnayKoduOlustur_Click);
+            // 
+            // btnMetneDonustur
+            // 
+            this.btnMetneDonustur.Location = new System.Drawing.Point(102, 42);
+            this.btnMetneDonustur.Name = "btnMetneDonustur";
+            this.btnMetneDonustur.Size = new System.Drawing.Size(135, 23);
+            this.btnMetneDonustur.TabIndex = 14;
+            this.btnMetneDonustur.Text = "Para Metnine Dönüştür";
+            this.btnMetneDonustur.UseVisualStyleBackColor = true;
+            this.btnMetneDonustur.Click += new System.EventHandler(this.btnMetneDonustur_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(18, 78);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Sonuç";
+            // 
+            // lbSayiSonuc
+            // 
+            this.lbSayiSonuc.FormattingEnabled = true;
+            this.lbSayiSonuc.HorizontalScrollbar = true;
+            this.lbSayiSonuc.Location = new System.Drawing.Point(62, 78);
+            this.lbSayiSonuc.Name = "lbSayiSonuc";
+            this.lbSayiSonuc.Size = new System.Drawing.Size(254, 82);
+            this.lbSayiSonuc.TabIndex = 12;
+            // 
+            // btnSayisalMi
+            // 
+            this.btnSayisalMi.Location = new System.Drawing.Point(21, 42);
+            this.btnSayisalMi.Name = "btnSayisalMi";
+            this.btnSayisalMi.Size = new System.Drawing.Size(75, 23);
+            this.btnSayisalMi.TabIndex = 11;
+            this.btnSayisalMi.Text = "Sayısal Mı?";
+            this.btnSayisalMi.UseVisualStyleBackColor = true;
+            this.btnSayisalMi.Click += new System.EventHandler(this.btnSayisalMi_Click);
+            // 
+            // txtSayi
+            // 
+            this.txtSayi.Location = new System.Drawing.Point(118, 16);
+            this.txtSayi.Name = "txtSayi";
+            this.txtSayi.Size = new System.Drawing.Size(199, 20);
+            this.txtSayi.TabIndex = 4;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(95, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Şifrelenecek Metin";
+            // 
             // FrmAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnlSayiIslemleri);
             this.Controls.Add(this.pnlSifreIslemleri);
             this.Controls.Add(this.pnlTarihIslemleri);
             this.Controls.Add(this.label1);
@@ -335,6 +437,8 @@
             this.pnlTarihIslemleri.PerformLayout();
             this.pnlSifreIslemleri.ResumeLayout(false);
             this.pnlSifreIslemleri.PerformLayout();
+            this.pnlSayiIslemleri.ResumeLayout(false);
+            this.pnlSayiIslemleri.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,6 +471,15 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnAyFarki;
+        private System.Windows.Forms.Panel pnlSayiIslemleri;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnOnayKoduOlustur;
+        private System.Windows.Forms.Button btnMetneDonustur;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListBox lbSayiSonuc;
+        private System.Windows.Forms.Button btnSayisalMi;
+        private System.Windows.Forms.TextBox txtSayi;
+        private System.Windows.Forms.Label label11;
     }
 }
 
