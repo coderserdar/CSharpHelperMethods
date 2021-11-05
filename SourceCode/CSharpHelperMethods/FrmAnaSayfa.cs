@@ -308,7 +308,6 @@ namespace CSharpHelperMethods
         #endregion
 
         #region Metin İşlemleri
-
         private void btnIlkHarfleriBuyukYap_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
