@@ -18,6 +18,7 @@ namespace CSharpHelperMethods
             pnlSifreIslemleri.Enabled = false;
             pnlSayiIslemleri.Enabled = false;
             pnlKisiIslemleri.Enabled = false;
+            pnlMetinIslemleri.Enabled = false;
             #endregion
         }
 
@@ -26,8 +27,18 @@ namespace CSharpHelperMethods
             #region Combobox'tan Seçilen Değere Göre İlgili Paneli Aktif Hale Getirme
             switch (cmbIslemTuru.SelectedIndex)
             {
+                case 0:
+                    {
+                        pnlMetinIslemleri.Enabled = true;
+                        pnlTarihIslemleri.Enabled = false;
+                        pnlSifreIslemleri.Enabled = false;
+                        pnlSayiIslemleri.Enabled = false;
+                        pnlKisiIslemleri.Enabled = false;
+                        break;
+                    }
                 case 1:
                     {
+                        pnlMetinIslemleri.Enabled = false;
                         pnlTarihIslemleri.Enabled = true;
                         pnlSifreIslemleri.Enabled = false;
                         pnlSayiIslemleri.Enabled = false;
@@ -36,6 +47,7 @@ namespace CSharpHelperMethods
                     }
                 case 2:
                     {
+                        pnlMetinIslemleri.Enabled = false;
                         pnlTarihIslemleri.Enabled = false;
                         pnlSifreIslemleri.Enabled = false;
                         pnlSayiIslemleri.Enabled = true;
@@ -44,6 +56,7 @@ namespace CSharpHelperMethods
                     }
                 case 3:
                     {
+                        pnlMetinIslemleri.Enabled = false;
                         pnlTarihIslemleri.Enabled = false;
                         pnlSifreIslemleri.Enabled = true;
                         pnlSayiIslemleri.Enabled = false;
@@ -52,6 +65,7 @@ namespace CSharpHelperMethods
                     }
                 case 4:
                     {
+                        pnlMetinIslemleri.Enabled = false;
                         pnlTarihIslemleri.Enabled = false;
                         pnlSifreIslemleri.Enabled = false;
                         pnlSayiIslemleri.Enabled = false;
@@ -60,6 +74,7 @@ namespace CSharpHelperMethods
                     }
                 default:
                     {
+                        pnlMetinIslemleri.Enabled = false;
                         pnlTarihIslemleri.Enabled = false;
                         pnlSifreIslemleri.Enabled = false;
                         pnlSayiIslemleri.Enabled = false;
@@ -288,6 +303,51 @@ namespace CSharpHelperMethods
                 sb.Append("E-Posta Doğru Mu?: ");
                 sb.Append(KisiIslemleri.DogrulaEPosta(txtKisiMetni.Text.Trim()) ? "Evet" : "Hayır");
                 lbKisiSonuc.Items.Add(sb.ToString());
+            }
+        }
+        #endregion
+
+        #region Metin İşlemleri
+
+        private void btnIlkHarfleriBuyukYap_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbMetinSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Metnin Düzenlenmiş Hali: ");
+                sb.Append(MetinIslemleri.MetinIlkKarakterleriBuyukYap(txtMetin.Text.Trim()));
+                lbMetinSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnIlkHarfiBuyukYap_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbMetinSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Metnin Düzenlenmiş Hali: ");
+                sb.Append(MetinIslemleri.MetinIlkKarakterBuyukDigerleriKucukYap(txtMetin.Text.Trim()));
+                lbMetinSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnTurkceKarakterDuzelt_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbMetinSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Metnin Düzenlenmiş Hali: ");
+                sb.Append(MetinIslemleri.TurkceKarakterleriDuzelt(txtMetin.Text.Trim()));
+                lbMetinSonuc.Items.Add(sb.ToString());
             }
         }
         #endregion

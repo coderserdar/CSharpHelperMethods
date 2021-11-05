@@ -71,10 +71,20 @@
             this.btnTcKimlikDogrula = new System.Windows.Forms.Button();
             this.txtKisiMetni = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.pnlMetinIslemleri = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnTurkceKarakterDuzelt = new System.Windows.Forms.Button();
+            this.btnIlkHarfiBuyukYap = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lbMetinSonuc = new System.Windows.Forms.ListBox();
+            this.btnIlkHarfleriBuyukYap = new System.Windows.Forms.Button();
+            this.txtMetin = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.pnlTarihIslemleri.SuspendLayout();
             this.pnlSifreIslemleri.SuspendLayout();
             this.pnlSayiIslemleri.SuspendLayout();
             this.pnlKisiIslemleri.SuspendLayout();
+            this.pnlMetinIslemleri.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbIslemTuru
@@ -519,12 +529,104 @@
             this.label14.TabIndex = 3;
             this.label14.Text = "Metin";
             // 
+            // pnlMetinIslemleri
+            // 
+            this.pnlMetinIslemleri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMetinIslemleri.Controls.Add(this.label15);
+            this.pnlMetinIslemleri.Controls.Add(this.btnTurkceKarakterDuzelt);
+            this.pnlMetinIslemleri.Controls.Add(this.btnIlkHarfiBuyukYap);
+            this.pnlMetinIslemleri.Controls.Add(this.label16);
+            this.pnlMetinIslemleri.Controls.Add(this.lbMetinSonuc);
+            this.pnlMetinIslemleri.Controls.Add(this.btnIlkHarfleriBuyukYap);
+            this.pnlMetinIslemleri.Controls.Add(this.txtMetin);
+            this.pnlMetinIslemleri.Controls.Add(this.label17);
+            this.pnlMetinIslemleri.Location = new System.Drawing.Point(220, 458);
+            this.pnlMetinIslemleri.Name = "pnlMetinIslemleri";
+            this.pnlMetinIslemleri.Size = new System.Drawing.Size(377, 181);
+            this.pnlMetinIslemleri.TabIndex = 21;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 13);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "Metin İşlemleri";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // btnTurkceKarakterDuzelt
+            // 
+            this.btnTurkceKarakterDuzelt.Location = new System.Drawing.Point(223, 42);
+            this.btnTurkceKarakterDuzelt.Name = "btnTurkceKarakterDuzelt";
+            this.btnTurkceKarakterDuzelt.Size = new System.Drawing.Size(134, 23);
+            this.btnTurkceKarakterDuzelt.TabIndex = 15;
+            this.btnTurkceKarakterDuzelt.Text = "Türkçe Karakter Düzelt";
+            this.btnTurkceKarakterDuzelt.UseVisualStyleBackColor = true;
+            this.btnTurkceKarakterDuzelt.Click += new System.EventHandler(this.btnTurkceKarakterDuzelt_Click);
+            // 
+            // btnIlkHarfiBuyukYap
+            // 
+            this.btnIlkHarfiBuyukYap.Location = new System.Drawing.Point(131, 42);
+            this.btnIlkHarfiBuyukYap.Name = "btnIlkHarfiBuyukYap";
+            this.btnIlkHarfiBuyukYap.Size = new System.Drawing.Size(86, 23);
+            this.btnIlkHarfiBuyukYap.TabIndex = 14;
+            this.btnIlkHarfiBuyukYap.Text = "İlk Harf Büyük";
+            this.btnIlkHarfiBuyukYap.UseVisualStyleBackColor = true;
+            this.btnIlkHarfiBuyukYap.Click += new System.EventHandler(this.btnIlkHarfiBuyukYap_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(18, 78);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(38, 13);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Sonuç";
+            // 
+            // lbMetinSonuc
+            // 
+            this.lbMetinSonuc.FormattingEnabled = true;
+            this.lbMetinSonuc.HorizontalScrollbar = true;
+            this.lbMetinSonuc.Location = new System.Drawing.Point(62, 78);
+            this.lbMetinSonuc.Name = "lbMetinSonuc";
+            this.lbMetinSonuc.Size = new System.Drawing.Size(254, 82);
+            this.lbMetinSonuc.TabIndex = 12;
+            // 
+            // btnIlkHarfleriBuyukYap
+            // 
+            this.btnIlkHarfleriBuyukYap.Location = new System.Drawing.Point(21, 42);
+            this.btnIlkHarfleriBuyukYap.Name = "btnIlkHarfleriBuyukYap";
+            this.btnIlkHarfleriBuyukYap.Size = new System.Drawing.Size(104, 23);
+            this.btnIlkHarfleriBuyukYap.TabIndex = 11;
+            this.btnIlkHarfleriBuyukYap.Text = "İlk Harfler Büyük";
+            this.btnIlkHarfleriBuyukYap.UseVisualStyleBackColor = true;
+            this.btnIlkHarfleriBuyukYap.Click += new System.EventHandler(this.btnIlkHarfleriBuyukYap_Click);
+            // 
+            // txtMetin
+            // 
+            this.txtMetin.Location = new System.Drawing.Point(119, 12);
+            this.txtMetin.Name = "txtMetin";
+            this.txtMetin.Size = new System.Drawing.Size(199, 20);
+            this.txtMetin.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(17, 19);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(33, 13);
+            this.label17.TabIndex = 3;
+            this.label17.Text = "Metin";
+            // 
             // FrmAnaSayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 686);
+            this.Controls.Add(this.pnlMetinIslemleri);
             this.Controls.Add(this.pnlKisiIslemleri);
             this.Controls.Add(this.pnlSayiIslemleri);
             this.Controls.Add(this.pnlSifreIslemleri);
@@ -543,6 +645,8 @@
             this.pnlSayiIslemleri.PerformLayout();
             this.pnlKisiIslemleri.ResumeLayout(false);
             this.pnlKisiIslemleri.PerformLayout();
+            this.pnlMetinIslemleri.ResumeLayout(false);
+            this.pnlMetinIslemleri.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -593,6 +697,15 @@
         private System.Windows.Forms.Button btnTcKimlikDogrula;
         private System.Windows.Forms.TextBox txtKisiMetni;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel pnlMetinIslemleri;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnTurkceKarakterDuzelt;
+        private System.Windows.Forms.Button btnIlkHarfiBuyukYap;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ListBox lbMetinSonuc;
+        private System.Windows.Forms.Button btnIlkHarfleriBuyukYap;
+        private System.Windows.Forms.TextBox txtMetin;
+        private System.Windows.Forms.Label label17;
     }
 }
 
