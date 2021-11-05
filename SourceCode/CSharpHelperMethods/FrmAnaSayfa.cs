@@ -11,6 +11,7 @@ namespace CSharpHelperMethods
             InitializeComponent();
         }
 
+        #region Formun Yüklenmesi ve Panel Seçimi
         private void FrmAnaSayfa_Load(object sender, System.EventArgs e)
         {
             #region Sayfa İlk Yüklendiğinde Tüm Panellerin Erişime Kapanması
@@ -84,6 +85,7 @@ namespace CSharpHelperMethods
             }
             #endregion
         }
+        #endregion
 
         #region Tarih İşlemleri
         private void btnYasHesapla_Click(object sender, System.EventArgs e)
@@ -346,6 +348,38 @@ namespace CSharpHelperMethods
                 StringBuilder sb = new StringBuilder();
                 sb.Append("Metnin Düzenlenmiş Hali: ");
                 sb.Append(MetinIslemleri.TurkceKarakterleriDuzelt(txtMetin.Text.Trim()));
+                lbMetinSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnMetinSifrele_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else if (!SayiIslemleri.SayisalMi(txtMetin.Text.Trim()))
+                MessageBox.Show("Girilen metin sayısal bir değer olmadığı için bu işlem gerçekleştirilemez");
+            else if (txtMetin.Text.Trim().Length != 11 && txtMetin.Text.Trim().Length != 10)
+                MessageBox.Show("Girilen metin 10 veya 11 karakter olmadığı için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbMetinSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("TC Kimlik No veya Vergi No'nun Şifrelenmiş Hali: ");
+                sb.Append(MetinIslemleri.MetinSifrele(txtMetin.Text.Trim()));
+                lbMetinSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnTelefonNoDuzenle_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbMetinSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("Telefon Numarasının Düzenlenmiş Hali: ");
+                sb.Append(MetinIslemleri.TelefonNoDuzenle(txtMetin.Text.Trim()));
                 lbMetinSonuc.Items.Add(sb.ToString());
             }
         }

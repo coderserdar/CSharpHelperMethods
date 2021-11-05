@@ -80,6 +80,8 @@
             this.btnIlkHarfleriBuyukYap = new System.Windows.Forms.Button();
             this.txtMetin = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnMetinSifrele = new System.Windows.Forms.Button();
+            this.btnTelefonNoDuzenle = new System.Windows.Forms.Button();
             this.pnlTarihIslemleri.SuspendLayout();
             this.pnlSifreIslemleri.SuspendLayout();
             this.pnlSayiIslemleri.SuspendLayout();
@@ -532,6 +534,8 @@
             // pnlMetinIslemleri
             // 
             this.pnlMetinIslemleri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMetinIslemleri.Controls.Add(this.btnTelefonNoDuzenle);
+            this.pnlMetinIslemleri.Controls.Add(this.btnMetinSifrele);
             this.pnlMetinIslemleri.Controls.Add(this.label15);
             this.pnlMetinIslemleri.Controls.Add(this.btnTurkceKarakterDuzelt);
             this.pnlMetinIslemleri.Controls.Add(this.btnIlkHarfiBuyukYap);
@@ -540,9 +544,9 @@
             this.pnlMetinIslemleri.Controls.Add(this.btnIlkHarfleriBuyukYap);
             this.pnlMetinIslemleri.Controls.Add(this.txtMetin);
             this.pnlMetinIslemleri.Controls.Add(this.label17);
-            this.pnlMetinIslemleri.Location = new System.Drawing.Point(220, 458);
+            this.pnlMetinIslemleri.Location = new System.Drawing.Point(15, 458);
             this.pnlMetinIslemleri.Name = "pnlMetinIslemleri";
-            this.pnlMetinIslemleri.Size = new System.Drawing.Size(377, 181);
+            this.pnlMetinIslemleri.Size = new System.Drawing.Size(773, 181);
             this.pnlMetinIslemleri.TabIndex = 21;
             // 
             // label15
@@ -591,7 +595,7 @@
             this.lbMetinSonuc.HorizontalScrollbar = true;
             this.lbMetinSonuc.Location = new System.Drawing.Point(62, 78);
             this.lbMetinSonuc.Name = "lbMetinSonuc";
-            this.lbMetinSonuc.Size = new System.Drawing.Size(254, 82);
+            this.lbMetinSonuc.Size = new System.Drawing.Size(652, 82);
             this.lbMetinSonuc.TabIndex = 12;
             // 
             // btnIlkHarfleriBuyukYap
@@ -608,7 +612,7 @@
             // 
             this.txtMetin.Location = new System.Drawing.Point(119, 12);
             this.txtMetin.Name = "txtMetin";
-            this.txtMetin.Size = new System.Drawing.Size(199, 20);
+            this.txtMetin.Size = new System.Drawing.Size(595, 20);
             this.txtMetin.TabIndex = 4;
             // 
             // label17
@@ -619,6 +623,26 @@
             this.label17.Size = new System.Drawing.Size(33, 13);
             this.label17.TabIndex = 3;
             this.label17.Text = "Metin";
+            // 
+            // btnMetinSifrele
+            // 
+            this.btnMetinSifrele.Location = new System.Drawing.Point(363, 42);
+            this.btnMetinSifrele.Name = "btnMetinSifrele";
+            this.btnMetinSifrele.Size = new System.Drawing.Size(134, 23);
+            this.btnMetinSifrele.TabIndex = 19;
+            this.btnMetinSifrele.Text = "Metin Şifrele";
+            this.btnMetinSifrele.UseVisualStyleBackColor = true;
+            this.btnMetinSifrele.Click += new System.EventHandler(this.btnMetinSifrele_Click);
+            // 
+            // btnTelefonNoDuzenle
+            // 
+            this.btnTelefonNoDuzenle.Location = new System.Drawing.Point(503, 42);
+            this.btnTelefonNoDuzenle.Name = "btnTelefonNoDuzenle";
+            this.btnTelefonNoDuzenle.Size = new System.Drawing.Size(134, 23);
+            this.btnTelefonNoDuzenle.TabIndex = 20;
+            this.btnTelefonNoDuzenle.Text = "Telefon No Düzenle";
+            this.btnTelefonNoDuzenle.UseVisualStyleBackColor = true;
+            this.btnTelefonNoDuzenle.Click += new System.EventHandler(this.btnTelefonNoDuzenle_Click);
             // 
             // FrmAnaSayfa
             // 
@@ -706,6 +730,8 @@
         private System.Windows.Forms.Button btnIlkHarfleriBuyukYap;
         private System.Windows.Forms.TextBox txtMetin;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnMetinSifrele;
+        private System.Windows.Forms.Button btnTelefonNoDuzenle;
     }
 }
 
