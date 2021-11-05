@@ -72,6 +72,8 @@
             this.txtKisiMetni = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.pnlMetinIslemleri = new System.Windows.Forms.Panel();
+            this.btnTelefonNoDuzenle = new System.Windows.Forms.Button();
+            this.btnMetinSifrele = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btnTurkceKarakterDuzelt = new System.Windows.Forms.Button();
             this.btnIlkHarfiBuyukYap = new System.Windows.Forms.Button();
@@ -80,8 +82,6 @@
             this.btnIlkHarfleriBuyukYap = new System.Windows.Forms.Button();
             this.txtMetin = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.btnMetinSifrele = new System.Windows.Forms.Button();
-            this.btnTelefonNoDuzenle = new System.Windows.Forms.Button();
             this.pnlTarihIslemleri.SuspendLayout();
             this.pnlSifreIslemleri.SuspendLayout();
             this.pnlSayiIslemleri.SuspendLayout();
@@ -549,6 +549,26 @@
             this.pnlMetinIslemleri.Size = new System.Drawing.Size(773, 181);
             this.pnlMetinIslemleri.TabIndex = 21;
             // 
+            // btnTelefonNoDuzenle
+            // 
+            this.btnTelefonNoDuzenle.Location = new System.Drawing.Point(503, 42);
+            this.btnTelefonNoDuzenle.Name = "btnTelefonNoDuzenle";
+            this.btnTelefonNoDuzenle.Size = new System.Drawing.Size(134, 23);
+            this.btnTelefonNoDuzenle.TabIndex = 20;
+            this.btnTelefonNoDuzenle.Text = "Telefon No Düzenle";
+            this.btnTelefonNoDuzenle.UseVisualStyleBackColor = true;
+            this.btnTelefonNoDuzenle.Click += new System.EventHandler(this.btnTelefonNoDuzenle_Click);
+            // 
+            // btnMetinSifrele
+            // 
+            this.btnMetinSifrele.Location = new System.Drawing.Point(363, 42);
+            this.btnMetinSifrele.Name = "btnMetinSifrele";
+            this.btnMetinSifrele.Size = new System.Drawing.Size(134, 23);
+            this.btnMetinSifrele.TabIndex = 19;
+            this.btnMetinSifrele.Text = "Metin Şifrele";
+            this.btnMetinSifrele.UseVisualStyleBackColor = true;
+            this.btnMetinSifrele.Click += new System.EventHandler(this.btnMetinSifrele_Click);
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -623,26 +643,6 @@
             this.label17.Size = new System.Drawing.Size(33, 13);
             this.label17.TabIndex = 3;
             this.label17.Text = "Metin";
-            // 
-            // btnMetinSifrele
-            // 
-            this.btnMetinSifrele.Location = new System.Drawing.Point(363, 42);
-            this.btnMetinSifrele.Name = "btnMetinSifrele";
-            this.btnMetinSifrele.Size = new System.Drawing.Size(134, 23);
-            this.btnMetinSifrele.TabIndex = 19;
-            this.btnMetinSifrele.Text = "Metin Şifrele";
-            this.btnMetinSifrele.UseVisualStyleBackColor = true;
-            this.btnMetinSifrele.Click += new System.EventHandler(this.btnMetinSifrele_Click);
-            // 
-            // btnTelefonNoDuzenle
-            // 
-            this.btnTelefonNoDuzenle.Location = new System.Drawing.Point(503, 42);
-            this.btnTelefonNoDuzenle.Name = "btnTelefonNoDuzenle";
-            this.btnTelefonNoDuzenle.Size = new System.Drawing.Size(134, 23);
-            this.btnTelefonNoDuzenle.TabIndex = 20;
-            this.btnTelefonNoDuzenle.Text = "Telefon No Düzenle";
-            this.btnTelefonNoDuzenle.UseVisualStyleBackColor = true;
-            this.btnTelefonNoDuzenle.Click += new System.EventHandler(this.btnTelefonNoDuzenle_Click);
             // 
             // FrmAnaSayfa
             // 
