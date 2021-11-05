@@ -13,37 +13,61 @@ namespace CSharpHelperMethods
 
         private void FrmAnaSayfa_Load(object sender, System.EventArgs e)
         {
+            #region Sayfa İlk Yüklendiğinde Tüm Panellerin Erişime Kapanması
             pnlTarihIslemleri.Enabled = false;
             pnlSifreIslemleri.Enabled = false;
             pnlSayiIslemleri.Enabled = false;
+            pnlKisiIslemleri.Enabled = false;
+            #endregion
         }
 
         private void cmbIslemTuru_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            if (cmbIslemTuru.SelectedIndex == 1)
+            #region Combobox'tan Seçilen Değere Göre İlgili Paneli Aktif Hale Getirme
+            switch (cmbIslemTuru.SelectedIndex)
             {
-                pnlTarihIslemleri.Enabled = true;
-                pnlSifreIslemleri.Enabled = false;
-                pnlSayiIslemleri.Enabled = false;
+                case 1:
+                    {
+                        pnlTarihIslemleri.Enabled = true;
+                        pnlSifreIslemleri.Enabled = false;
+                        pnlSayiIslemleri.Enabled = false;
+                        pnlKisiIslemleri.Enabled = false;
+                        break;
+                    }
+                case 2:
+                    {
+                        pnlTarihIslemleri.Enabled = false;
+                        pnlSifreIslemleri.Enabled = false;
+                        pnlSayiIslemleri.Enabled = true;
+                        pnlKisiIslemleri.Enabled = false;
+                        break;
+                    }
+                case 3:
+                    {
+                        pnlTarihIslemleri.Enabled = false;
+                        pnlSifreIslemleri.Enabled = true;
+                        pnlSayiIslemleri.Enabled = false;
+                        pnlKisiIslemleri.Enabled = false;
+                        break;
+                    }
+                case 4:
+                    {
+                        pnlTarihIslemleri.Enabled = false;
+                        pnlSifreIslemleri.Enabled = false;
+                        pnlSayiIslemleri.Enabled = false;
+                        pnlKisiIslemleri.Enabled = true;
+                        break;
+                    }
+                default:
+                    {
+                        pnlTarihIslemleri.Enabled = false;
+                        pnlSifreIslemleri.Enabled = false;
+                        pnlSayiIslemleri.Enabled = false;
+                        pnlKisiIslemleri.Enabled = false;
+                        break;
+                    }
             }
-            else if (cmbIslemTuru.SelectedIndex == 2)
-            {
-                pnlTarihIslemleri.Enabled = false;
-                pnlSifreIslemleri.Enabled = false;
-                pnlSayiIslemleri.Enabled = true;
-            }
-            else if (cmbIslemTuru.SelectedIndex == 3)
-            {
-                pnlTarihIslemleri.Enabled = false;
-                pnlSifreIslemleri.Enabled = true;
-                pnlSayiIslemleri.Enabled = false;
-            }
-            else
-            {
-                pnlTarihIslemleri.Enabled = false;
-                pnlSifreIslemleri.Enabled = false;
-                pnlSayiIslemleri.Enabled = false;
-            }
+            #endregion
         }
 
         #region Tarih İşlemleri
@@ -215,6 +239,56 @@ namespace CSharpHelperMethods
             sb.Append("Oluşturulan 6 haneli onay kodu: ");
             sb.Append(SayiIslemleri.AltiHaneliOnayKoduOlustur());
             lbSayiSonuc.Items.Add(sb.ToString());
+        }
+        #endregion
+
+        #region Kişi İşlemleri
+        private void btnTcKimlikDogrula_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else if (!SayiIslemleri.SayisalMi(txtKisiMetni.Text.Trim()))
+                MessageBox.Show("Girilen metin sayısal bir değer olmadığı için bu işlem gerçekleştirilemez");
+            else if (txtKisiMetni.Text.Trim().Length != 11)
+                MessageBox.Show("Girilen metin 11 karakter olmadığı için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbKisiSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("TC Kimlik No Doğru Mu?: ");
+                sb.Append(KisiIslemleri.DogrulaTcKimlikNo(txtKisiMetni.Text.Trim()) ? "Evet" : "Hayır");
+                lbKisiSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnIbanDogrula_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else if (txtKisiMetni.Text.Trim().Length != 26)
+                MessageBox.Show("Girilen metin 26 karakter olmadığı için bu işlem gerçekleştirilemez. Karakter sayısı: " + txtKisiMetni.Text.Trim().Length);
+            else
+            {
+                lbKisiSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("IBAN Doğru Mu?: ");
+                sb.Append(KisiIslemleri.DogrulaIBAN(txtKisiMetni.Text.Trim()) ? "Evet" : "Hayır");
+                lbKisiSonuc.Items.Add(sb.ToString());
+            }
+        }
+
+        private void btnEPostaDogrula_Click(object sender, System.EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
+                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+            else
+            {
+                lbKisiSonuc.Items.Clear();
+                StringBuilder sb = new StringBuilder();
+                sb.Append("E-Posta Doğru Mu?: ");
+                sb.Append(KisiIslemleri.DogrulaEPosta(txtKisiMetni.Text.Trim()) ? "Evet" : "Hayır");
+                lbKisiSonuc.Items.Add(sb.ToString());
+            }
         }
         #endregion
     }
