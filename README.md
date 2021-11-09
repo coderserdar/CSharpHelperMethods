@@ -23,13 +23,13 @@ Aşağıda programa ait örnek ekran görüntüleri bulunmaktadır.
 
 <table>
    <tr>
-      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_01.png?raw=true" width="240" height="400"></td>
-      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_02.png?raw=true" width="240" height="400"></td>
-      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_03.png?raw=true" width="240" height="400"></td>
+      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_11.png?raw=true"></td>
+      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_12.png?raw=true"></td>
+      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_13.png?raw=true"></td>
    </tr>
    <tr>
-      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_04.png?raw=true" width="240" height="400"></td>
-      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_05.png?raw=true" width="240" height="400"></td>
-      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_06.png?raw=true" width="240" height="400"></td>
+      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_14.png?raw=true"></td>
+      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_15.png?raw=true"></td>
+      <td><img src="https://github.com/coderserdar/CSharpHelperMethods/blob/main/Screenshots/App_Screens_16.png?raw=true"></td>
    </tr>
 </table>
