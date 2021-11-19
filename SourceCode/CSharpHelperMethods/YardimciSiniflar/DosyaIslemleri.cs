@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace CSharpHelperMethods.YardimciSiniflar
 {
@@ -91,6 +92,51 @@ namespace CSharpHelperMethods.YardimciSiniflar
             {
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Dosya sistemindeki bir dosyanın başka bir program tarafından o anda kullanımda olup olmadığının kontol edildiği bir metottur.
+        /// </summary>
+        /// <param name="dosya">Dosya Bilgisi</param>
+        /// <returns>Evet veya Hayır Bilgisi</returns>
+        public static bool DosyaKilitliMi(FileInfo dosya)
+        {
+            FileStream stream = null;
+
+            try
+            {
+                stream = dosya.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+            }
+            catch (IOException)
+            {
+                // eğer dosya başka bir uygulama tarafından kullanılıyorsa
+                // burada true dönüyor ki
+                // kullanıcı bu metottan gelen bilgiye göre davransın
+                return true;
+            }
+            finally
+            {
+                if (stream != null)
+                    stream.Close();
+            }
+
+            //file is not locked
+            return false;
+        }
+
+        /// <summary>
+        /// Bu metot ile gönderdiğiniz Dizin yolunda verdiğiniz isimde bir klasör yoksa
+        /// Otomatik olarak oluşturmayı sağlıyor
+        /// </summary>
+        /// <param name="dizinYolu">Dizin Yolu Bilgisi</param>
+        /// <returns>Evet veya Hayır Bilgisi</returns>
+        public static bool GuvenliDizinOlustur(string dizinYolu)
+        {
+            bool isExists = System.IO.Directory.Exists(dizinYolu);
+
+            if (!isExists)
+                System.IO.Directory.CreateDirectory(dizinYolu);
+            return isExists;
         }
     }
 }
