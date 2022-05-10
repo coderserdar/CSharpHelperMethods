@@ -9,77 +9,66 @@ namespace CSharpHelperMethods.YardimciSiniflar
     /// </summary>
     public static class SiralamaIslemleri
     {
-        private enum ChunkType { Alphanumeric, Numeric };
+        private enum ChunkType { Alphanumeric, Numeric }
 
         private static bool InChunk(char ch, char otherCh)
         {
-            ChunkType type = ChunkType.Alphanumeric;
+            var type = ChunkType.Alphanumeric;
 
             if (char.IsDigit(otherCh))
             {
                 type = ChunkType.Numeric;
             }
 
-            if ((type == ChunkType.Alphanumeric && char.IsDigit(ch))
-                || (type == ChunkType.Numeric && !char.IsDigit(ch)))
-            {
-                return false;
-            }
-
-            return true;
+            return (type != ChunkType.Alphanumeric || !char.IsDigit(ch)) && (type != ChunkType.Numeric || char.IsDigit(ch));
         }
 
         public static int Compare(string x, string y)
         {
-            String s1 = x;
-            String s2 = y;
-            if (string.IsNullOrEmpty(s1) || string.IsNullOrEmpty(s2))
-            {
-                return 0;
-            }
+            if (string.IsNullOrEmpty(x) || string.IsNullOrEmpty(y)) return 0;
+            var thisMarker = 0;
+            var thatMarker = 0;
 
-            int thisMarker = 0;
-            int thatMarker = 0;
-
-            while ((thisMarker < s1.Length) || (thatMarker < s2.Length))
+            while (thisMarker < x.Length || thatMarker < y.Length)
             {
-                if (thisMarker >= s1.Length)
+                if (thisMarker >= x.Length)
                 {
                     return -1;
                 }
-                else if (thatMarker >= s2.Length)
+                if (thatMarker >= y.Length)
                 {
                     return 1;
                 }
-                char thisCh = s1[thisMarker];
-                char thatCh = s2[thatMarker];
 
-                StringBuilder thisChunk = new StringBuilder();
-                StringBuilder thatChunk = new StringBuilder();
+                var thisCh = x[thisMarker];
+                var thatCh = y[thatMarker];
 
-                while ((thisMarker < s1.Length) && (thisChunk.Length == 0 || InChunk(thisCh, thisChunk[0])))
+                var thisChunk = new StringBuilder();
+                var thatChunk = new StringBuilder();
+
+                while (thisMarker < x.Length && (thisChunk.Length == 0 || InChunk(thisCh, thisChunk[0])))
                 {
                     thisChunk.Append(thisCh);
                     thisMarker++;
 
-                    if (thisMarker < s1.Length)
+                    if (thisMarker < x.Length)
                     {
-                        thisCh = s1[thisMarker];
+                        thisCh = x[thisMarker];
                     }
                 }
 
-                while ((thatMarker < s2.Length) && (thatChunk.Length == 0 || InChunk(thatCh, thatChunk[0])))
+                while (thatMarker < y.Length && (thatChunk.Length == 0 || InChunk(thatCh, thatChunk[0])))
                 {
                     thatChunk.Append(thatCh);
                     thatMarker++;
 
-                    if (thatMarker < s2.Length)
+                    if (thatMarker < y.Length)
                     {
-                        thatCh = s2[thatMarker];
+                        thatCh = y[thatMarker];
                     }
                 }
 
-                int result = 0;
+                var result = 0;
                 // If both chunks contain numeric characters, sort them numerically
                 if (char.IsDigit(thisChunk[0]) && char.IsDigit(thatChunk[0]))
                 {
@@ -104,12 +93,9 @@ namespace CSharpHelperMethods.YardimciSiniflar
                     //result = thisChunk.ToString().CompareTo(thatChunk.ToString());
                 }
 
-                if (result != 0)
-                {
-                    return result;
-                }
+                if (result == 0) continue;
+                return result;
             }
-
             return 0;
         }
     }

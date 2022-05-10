@@ -21,6 +21,7 @@ namespace CSharpHelperMethods
         /// <param name="e"></param>
         private void FrmAnaSayfa_Load(object sender, System.EventArgs e)
         {
+            cmbIslemTuru.DropDownStyle = ComboBoxStyle.DropDownList;
             #region Sayfa İlk Yüklendiğinde Tüm Panellerin Erişime Kapanması
             pnlTarihIslemleri.Enabled = false;
             pnlSifreIslemleri.Enabled = false;
@@ -122,7 +123,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Doğum tarihi seçilen kişi ");
                 sb.Append(TarihIslemleri.YasHesapla(dtpBaslangicTarihi.Value));
                 sb.Append(" yaşındadır");
@@ -143,7 +144,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append(TarihIslemleri.YasHesaplaMetinsel(dtpBaslangicTarihi.Value));
                 lbSonuc.Items.Add(sb.ToString());
             }
@@ -165,7 +166,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("İki tarih arası: ");
                 sb.Append(TarihIslemleri.TarihAraligiHesapla(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date));
                 lbSonuc.Items.Add(sb.ToString());
@@ -188,7 +189,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Ay Farkı: ");
                 sb.Append(TarihIslemleri.AyFarki(dtpBaslangicTarihi.Value.Date, dtpBitisTarihi.Value.Date));
                 lbSonuc.Items.Add(sb.ToString());
@@ -211,7 +212,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSifreSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Girilen Metnin MD5 Karşılığı: ");
                 sb.Append(SifrelemeIslemleri.HesaplaMD5(txtSifrelenecekMetin.Text.Trim()));
                 lbSifreSonuc.Items.Add(sb.ToString());
@@ -232,7 +233,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSifreSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Girilen Metnin SHA 256 Karşılığı: ");
                 sb.Append(SifrelemeIslemleri.HesaplaSHA256(txtSifrelenecekMetin.Text.Trim()));
                 lbSifreSonuc.Items.Add(sb.ToString());
@@ -253,7 +254,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSifreSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Girilen Metnin SHA 512 Karşılığı: ");
                 sb.Append(SifrelemeIslemleri.HesaplaSHA512(txtSifrelenecekMetin.Text.Trim()));
                 lbSifreSonuc.Items.Add(sb.ToString());
@@ -268,7 +269,7 @@ namespace CSharpHelperMethods
         private void btnRastgeleSifreUret_Click(object sender, System.EventArgs e)
         {
             lbSifreSonuc.Items.Clear();
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append("Rastgele Üretilen Şifre: ");
             sb.Append(SifrelemeIslemleri.RastgeleSifreUret());
             lbSifreSonuc.Items.Add(sb.ToString());
@@ -288,7 +289,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSifreSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Girilen Şifrenin Uygunluk Durumu: ");
                 sb.Append(SifrelemeIslemleri.SifreUygunMu(txtSifrelenecekMetin.Text.Trim()));
                 lbSifreSonuc.Items.Add(sb.ToString());
@@ -310,7 +311,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbSayiSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Girilen Metin Sayı Mı?: ");
                 sb.Append(SayiIslemleri.SayisalMi(txtSayi.Text.Trim()) ? "Evet" : "Hayır");
                 lbSayiSonuc.Items.Add(sb.ToString());
@@ -332,9 +333,9 @@ namespace CSharpHelperMethods
             else
             {
                 var metinSadeceSayiKismi = txtSayi.Text.Trim();
-                decimal sayi = SayiIslemleri.SayiHalineCevir(metinSadeceSayiKismi);
+                var sayi = SayiIslemleri.SayiHalineCevir(metinSadeceSayiKismi);
                 lbSayiSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Girilen Sayının Metin Hali (Parasal): ");
                 sb.Append(SayiIslemleri.SayiyiYaziyaCevir(sayi));
                 lbSayiSonuc.Items.Add(sb.ToString());
@@ -349,7 +350,7 @@ namespace CSharpHelperMethods
         private void btnOnayKoduOlustur_Click(object sender, System.EventArgs e)
         {
             lbSayiSonuc.Items.Clear();
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             sb.Append("Oluşturulan 6 haneli onay kodu: ");
             sb.Append(SayiIslemleri.AltiHaneliOnayKoduOlustur());
             lbSayiSonuc.Items.Add(sb.ToString());
@@ -374,7 +375,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbKisiSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("TC Kimlik No Doğru Mu?: ");
                 sb.Append(KisiIslemleri.DogrulaTcKimlikNo(txtKisiMetni.Text.Trim()) ? "Evet" : "Hayır");
                 lbKisiSonuc.Items.Add(sb.ToString());
@@ -396,7 +397,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbKisiSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("IBAN Doğru Mu?: ");
                 sb.Append(KisiIslemleri.DogrulaIBAN(txtKisiMetni.Text.Trim()) ? "Evet" : "Hayır");
                 lbKisiSonuc.Items.Add(sb.ToString());
@@ -416,7 +417,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbKisiSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("E-Posta Doğru Mu?: ");
                 sb.Append(KisiIslemleri.DogrulaEPosta(txtKisiMetni.Text.Trim()) ? "Evet" : "Hayır");
                 lbKisiSonuc.Items.Add(sb.ToString());
@@ -438,9 +439,9 @@ namespace CSharpHelperMethods
             else
             {
                 lbMetinSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Metnin Düzenlenmiş Hali: ");
-                sb.Append(MetinIslemleri.MetinIlkKarakterleriBuyukYap(txtMetin.Text.Trim()));
+                sb.Append(txtMetin.Text.Trim().MetinIlkKarakterleriBuyukYap());
                 lbMetinSonuc.Items.Add(sb.ToString());
             }
         }
@@ -458,7 +459,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbMetinSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Metnin Düzenlenmiş Hali: ");
                 sb.Append(MetinIslemleri.MetinIlkKarakterBuyukDigerleriKucukYap(txtMetin.Text.Trim()));
                 lbMetinSonuc.Items.Add(sb.ToString());
@@ -478,7 +479,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbMetinSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Metnin Düzenlenmiş Hali: ");
                 sb.Append(MetinIslemleri.TurkceKarakterleriDuzelt(txtMetin.Text.Trim()));
                 lbMetinSonuc.Items.Add(sb.ToString());
@@ -503,7 +504,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbMetinSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("TC Kimlik No veya Vergi No'nun Şifrelenmiş Hali: ");
                 sb.Append(MetinIslemleri.MetinSifrele(txtMetin.Text.Trim()));
                 lbMetinSonuc.Items.Add(sb.ToString());
@@ -523,7 +524,7 @@ namespace CSharpHelperMethods
             else
             {
                 lbMetinSonuc.Items.Clear();
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 sb.Append("Telefon Numarasının Düzenlenmiş Hali: ");
                 sb.Append(MetinIslemleri.TelefonNoDuzenle(txtMetin.Text.Trim()));
                 lbMetinSonuc.Items.Add(sb.ToString());

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -18,13 +19,9 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Girdi Metninin Şifrelenmiş Hali</returns>
         public static string HesaplaSHA512(string text)
         {
-            SHA512Managed sha512 = new SHA512Managed();
-            Byte[] encryptedSha512 = sha512.ComputeHash(Encoding.UTF8.GetBytes(text));
-            string strHex = "";
-            foreach (byte b in encryptedSha512)
-            {
-                strHex += String.Format("{0:x2}", b);
-            }
+            var sha512 = new SHA512Managed();
+            var encryptedSha512 = sha512.ComputeHash(Encoding.UTF8.GetBytes(text));
+            var strHex = encryptedSha512.Aggregate("", (current, b) => current + $"{b:x2}");
             return strHex.ToUpper();
         }
 
@@ -35,13 +32,13 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Girdi Metninin Şifrelenmiş Hali</returns>
         public static string HesaplaSHA256(string text)
         {
-            SHA256 sha256 = SHA256Managed.Create();
-            byte[] bytes = Encoding.UTF8.GetBytes(text);
-            byte[] hash = sha256.ComputeHash(bytes);
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
+            var sha256 = SHA256Managed.Create();
+            var bytes = Encoding.UTF8.GetBytes(text);
+            var hash = sha256.ComputeHash(bytes);
+            var result = new StringBuilder();
+            foreach (var t in hash)
             {
-                result.Append(hash[i].ToString("X2"));
+                result.Append(t.ToString("X2"));
             }
             return result.ToString();
         }
@@ -53,12 +50,12 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Girdi Metninin Şifrelenmiş Hali</returns>
         public static string HesaplaMD5(string text)
         {
-            MD5 md5 = MD5.Create();
-            byte[] inputBytes = Encoding.ASCII.GetBytes(text);
-            byte[] hash = md5.ComputeHash(inputBytes);
+            var md5 = MD5.Create();
+            var inputBytes = Encoding.ASCII.GetBytes(text);
+            var hash = md5.ComputeHash(inputBytes);
 
-            StringBuilder sb = new StringBuilder();
-            foreach (byte t in hash)
+            var sb = new StringBuilder();
+            foreach (var t in hash)
             {
                 sb.Append(t.ToString("X2"));
             }
@@ -75,7 +72,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         public static string SifreUygunMu(string text)
         {
             //bu kısımda şifrenin olması gereken koşulları değerlendirilecek.
-            List<string> mesajlar = new List<string>();
+            var mesajlar = new List<string>();
 
             if (text.Length < 8)
                 mesajlar.Add("Parola en az 8 karakter olmalıdır.");
@@ -94,14 +91,9 @@ namespace CSharpHelperMethods.YardimciSiniflar
 
             if (mesajlar.Count < 1)
                 return "Uygun";
-            else
-            {
-                var sonuc = "";
-                foreach (var item in mesajlar)
-                    sonuc += item + ", ";
-                sonuc = sonuc.Substring(0, sonuc.Length - 2);
-                return sonuc;
-            }
+            var sonuc = mesajlar.Aggregate("", (current, item) => current + item + ", ");
+            sonuc = sonuc.Substring(0, sonuc.Length - 2);
+            return sonuc;
         }
 
         /// <summary>
@@ -110,10 +102,10 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns></returns>
         public static string RastgeleSifreUret()
         {
-            int sifreUzunluk = 8;
-            string gecerliKarakterler = "abcdefghijklmnozABCDEFGHIJKLMNOZ1234567890";
-            StringBuilder strB = new StringBuilder(100);
-            Random random = new Random();
+            var sifreUzunluk = 8;
+            const string gecerliKarakterler = "abcdefghijklmnozABCDEFGHIJKLMNOZ1234567890";
+            var strB = new StringBuilder(100);
+            var random = new Random();
             while (0 < sifreUzunluk--)
             {
                 strB.Append(gecerliKarakterler[random.Next(gecerliKarakterler.Length)]);

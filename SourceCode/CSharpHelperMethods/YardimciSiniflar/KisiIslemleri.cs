@@ -20,18 +20,18 @@ namespace CSharpHelperMethods.YardimciSiniflar
             var tcNo = Convert.ToInt64(tcKimlikNo);
             var atcno = tcNo / 100;
             var btcno = tcNo / 100;
-            var c1 = atcno % 10; atcno = atcno / 10;
-            var c2 = atcno % 10; atcno = atcno / 10;
-            var c3 = atcno % 10; atcno = atcno / 10;
-            var c4 = atcno % 10; atcno = atcno / 10;
-            var c5 = atcno % 10; atcno = atcno / 10;
-            var c6 = atcno % 10; atcno = atcno / 10;
-            var c7 = atcno % 10; atcno = atcno / 10;
-            var c8 = atcno % 10; atcno = atcno / 10;
-            var c9 = atcno % 10; atcno = atcno / 10;
-            var q1 = ((10 - ((((c1 + c3 + c5 + c7 + c9) * 3) + (c2 + c4 + c6 + c8)) % 10)) % 10);
-            var q2 = ((10 - (((((c2 + c4 + c6 + c8) + q1) * 3) + (c1 + c3 + c5 + c7 + c9)) % 10)) % 10);
-            var dogrula = ((btcno * 100) + (q1 * 10) + q2 == tcNo);
+            var c1 = atcno % 10; atcno /= 10;
+            var c2 = atcno % 10; atcno /= 10;
+            var c3 = atcno % 10; atcno /= 10;
+            var c4 = atcno % 10; atcno /= 10;
+            var c5 = atcno % 10; atcno /= 10;
+            var c6 = atcno % 10; atcno /= 10;
+            var c7 = atcno % 10; atcno /= 10;
+            var c8 = atcno % 10; atcno /= 10;
+            var c9 = atcno % 10;
+            var q1 = (10 - ((c1 + c3 + c5 + c7 + c9) * 3 + c2 + c4 + c6 + c8) % 10) % 10;
+            var q2 = (10 - ((c2 + c4 + c6 + c8 + q1) * 3 + c1 + c3 + c5 + c7 + c9) % 10) % 10;
+            var dogrula = btcno * 100 + q1 * 10 + q2 == tcNo;
             return dogrula;
         }
 
@@ -53,18 +53,18 @@ namespace CSharpHelperMethods.YardimciSiniflar
 
             iban = iban.Replace(" ", String.Empty);
             var bank = iban.Substring(4, iban.Length - 4) + iban.Substring(0, 4);
-            var asciiShift = 55;
+            const int asciiShift = 55;
             var sb = new StringBuilder();
             foreach (var c in bank)
             {
                 sb.Append(char.IsLetter(c) ? c - asciiShift : int.Parse(c.ToString()));
             }
 
-            string checkSumString = sb.ToString();
-            int checksum = int.Parse(checkSumString.Substring(0, 1));
-            for (int i = 1; i < checkSumString.Length; i++)
+            var checkSumString = sb.ToString();
+            var checksum = int.Parse(checkSumString.Substring(0, 1));
+            for (var i = 1; i < checkSumString.Length; i++)
             {
-                int v = int.Parse(checkSumString.Substring(i, 1));
+                var v = int.Parse(checkSumString.Substring(i, 1));
                 checksum *= 10;
                 checksum += v;
                 checksum %= 97;

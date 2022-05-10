@@ -34,21 +34,20 @@ namespace CSharpHelperMethods.YardimciSiniflar
 
         public static string MetinSifrele(string metin)
         {
-            if (!string.IsNullOrEmpty(metin))
+            if (string.IsNullOrEmpty(metin)) return metin;
+            var metinDuzenleyici = new StringBuilder(metin);
+            switch (metin.Length)
             {
-                var metinDuzenleyici = new StringBuilder(metin);
-                if (metin.Length == 10)
-                {
+                case 10:
                     metinDuzenleyici.Remove(2, 6);
                     metinDuzenleyici.Insert(2, "******");
                     metin = metinDuzenleyici.ToString();
-                }
-                else if (metin.Length == 11)
-                {
+                    break;
+                case 11:
                     metinDuzenleyici.Remove(2, 7);
                     metinDuzenleyici.Insert(2, "*******");
                     metin = metinDuzenleyici.ToString();
-                }
+                    break;
             }
             return metin;
         }
@@ -100,30 +99,28 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Girilen Metnin Olması Gerektiği Hali</returns>
         public static string HTMLDuzelt(string text)
         {
-            List<string> sc = new List<string>();
-            // get rid of unnecessary tag spans (comments and title)
-            sc.Add(@"<!--(\w|\W)+?-->");
-            sc.Add(@"<title>(\w|\W)+?</title>");
-            // Get rid of classes and styles
-            sc.Add(@"\s?class=\w+");
-            sc.Add(@"\s+style='[^']+'");
-            // Get rid of unnecessary tags
-            sc.Add(
-                @"<(meta|link|/?o:|/?style|/?div|/?st\d|/?head|/?html|body|/?body|/?span|!\[)[^>]*?>");
-            // Get rid of empty paragraph tags
-            sc.Add(@"(<[^>]+>)+&nbsp;(</\w+>)+");
-            sc.Add(@"<a[^>]*>([^<]+)</a>");
-            sc.Add(@"<p[^>]*>([^<]+)</p>");
-            // remove bizarre v: element attached to <img> tag
-            sc.Add(@"\s+v:\w+=""[^""]+""");
-            // remove extra lines
-            sc.Add(@"(\n\r){2,}");
-            sc.Add("&nbsp;");
-            foreach (string s in sc)
+            var sc = new List<string>
             {
-                text = Regex.Replace(text, s, string.Empty, RegexOptions.IgnoreCase);
-            }
-            text = System.Text.RegularExpressions.Regex.Replace(text, "<.*?>", String.Empty);
+                // get rid of unnecessary tag spans (comments and title)
+                @"<!--(\w|\W)+?-->",
+                @"<title>(\w|\W)+?</title>",
+                // Get rid of classes and styles
+                @"\s?class=\w+",
+                @"\s+style='[^']+'",
+                // Get rid of unnecessary tags
+                @"<(meta|link|/?o:|/?style|/?div|/?st\d|/?head|/?html|body|/?body|/?span|!\[)[^>]*?>",
+                // Get rid of empty paragraph tags
+                @"(<[^>]+>)+&nbsp;(</\w+>)+",
+                @"<a[^>]*>([^<]+)</a>",
+                @"<p[^>]*>([^<]+)</p>",
+                // remove bizarre v: element attached to <img> tag
+                @"\s+v:\w+=""[^""]+""",
+                // remove extra lines
+                @"(\n\r){2,}",
+                "&nbsp;"
+            };
+            text = sc.Aggregate(text, (current, s) => Regex.Replace(current, s, string.Empty, RegexOptions.IgnoreCase));
+            text = Regex.Replace(text, "<.*?>", String.Empty);
             text = text.Replace("\r", " ").Replace("\n", " ").Replace("  ", " ").Trim();
             text = text.Replace("&rsquo;", "'");
             text = text.Replace("rsquo;", "'");
@@ -156,7 +153,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Metnin Kelimelerinin İlk Harflerinin Büyültülmüş Hali</returns>
         public static string MetinIlkKarakterleriBuyukYap(this string input)
         {
-            string result = "";
+            var result = "";
             var wordList = input.Split(' ');
             var cultureInfo = new CultureInfo("tr-TR");
             foreach (var item in wordList)
@@ -176,19 +173,14 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Girilen Telefon Numarasının SMS Gönderilecek Hali</returns>
         public static string TelefonNoDuzenle(string telefonNo)
         {
-            if (!string.IsNullOrEmpty(telefonNo))
+            if (string.IsNullOrEmpty(telefonNo)) return string.Empty;
+            telefonNo = telefonNo.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
+            if (telefonNo.Length == 11)
             {
-                telefonNo = telefonNo.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
-                if (telefonNo.Length == 11)
-                {
-                    telefonNo = telefonNo.Substring(telefonNo.Length - 10);
-                }
-                return telefonNo;
+                telefonNo = telefonNo.Substring(telefonNo.Length - 10);
             }
-            else
-            {
-                return string.Empty;
-            }
+            return telefonNo;
+
         }
 
         /// <summary>
@@ -198,15 +190,10 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Girilen Metnin İstenen Hali</returns>
         public static string BoslukKaldir(string metin)
         {
-            if (!string.IsNullOrEmpty(metin))
-            {
-                metin = metin.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
-                return metin;
-            }
-            else
-            {
-                return string.Empty;
-            }
+            if (string.IsNullOrEmpty(metin)) return string.Empty;
+            metin = metin.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
+            return metin;
+
         }
     }
 }

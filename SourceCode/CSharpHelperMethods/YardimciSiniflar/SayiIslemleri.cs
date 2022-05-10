@@ -22,7 +22,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// Burada string olarak tutar verisi alınıyor
         /// Ve decimala çevriliyor
         /// </summary>
-        /// <param name="incomingValue">Girilen String Değer</param>
+        /// <param name="metin">Girilen String Değer</param>
         /// <returns>Decimal Değer</returns>
         public static decimal SayiHalineCevir(string metin)
         {
@@ -33,18 +33,9 @@ namespace CSharpHelperMethods.YardimciSiniflar
                     return 0;
                 return val / 100;
             }
-            else
-            {
-                var value = decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val);
-                if (value)
-                {
-                    return val;
-                }
-                else
-                {
-                    return 0;
-                }
-            }
+
+            var value = decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val);
+            return value ? val : 0;
         }
 
         /// <summary>
@@ -60,17 +51,17 @@ namespace CSharpHelperMethods.YardimciSiniflar
             var kurus = sTutar.Substring(sTutar.IndexOf(',') + 1, 2);
             var yazi = "";
 
-            string[] birler = { "", "BİR", "İKİ", "ÜÇ", "DÖRT", "BEŞ", "ALTI", "YEDİ", "SEKİZ", "DOKUZ" };
-            string[] onlar = { "", "ON", "YİRMİ", "OTUZ", "KIRK", "ELLİ", "ALTMIŞ", "YETMİŞ", "SEKSEN", "DOKSAN" };
-            string[] binler = { "KATRİLYON", "TRİLYON", "MİLYAR", "MİLYON", "BİN", "" }; //KATRİLYON'un önüne ekleme yapılarak artırabilir.
+            var birler = new[] { "", "BİR", "İKİ", "ÜÇ", "DÖRT", "BEŞ", "ALTI", "YEDİ", "SEKİZ", "DOKUZ" };
+            var onlar = new[] { "", "ON", "YİRMİ", "OTUZ", "KIRK", "ELLİ", "ALTMIŞ", "YETMİŞ", "SEKSEN", "DOKSAN" };
+            var binler = new[] { "KATRİLYON", "TRİLYON", "MİLYAR", "MİLYON", "BİN", "" };
 
-            var grupSayisi = 6;
+            const int grupSayisi = 6;
             //sayıdaki 3'lü grup sayısı. katrilyon içi 6. (1.234,00 daki grup sayısı 2'dir.)
             //KATRİLYON'un başına ekleyeceğiniz her değer için grup sayısını artırınız.
 
             lira = lira.PadLeft(grupSayisi * 3, '0'); //sayının soluna '0' eklenerek sayı 'grup sayısı x 3' basakmaklı yapılıyor.          
 
-            for (int i = 0; i < grupSayisi * 3; i += 3) //sayı 3'erli gruplar halinde ele alınıyor.
+            for (var i = 0; i < grupSayisi * 3; i += 3) //sayı 3'erli gruplar halinde ele alınıyor.
             {
                 var grupDegeri = "";
 
@@ -96,7 +87,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
             if (yazi != "")
                 yazi += " TL ";
 
-            int yaziUzunlugu = yazi.Length;
+            var yaziUzunlugu = yazi.Length;
 
             if (kurus.Substring(0, 1) != "0") //kuruş onlar
                 yazi += onlar[Convert.ToInt32(kurus.Substring(0, 1))];

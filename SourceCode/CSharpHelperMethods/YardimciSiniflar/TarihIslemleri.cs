@@ -39,24 +39,23 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Yaş Bilgisi</returns>  
         public static int YasHesapla(DateTime dogumTarihi)
         {
-            DateTime Now = DateTime.Now;
-            int Years = new DateTime(DateTime.Now.Subtract(dogumTarihi).Ticks).Year - 1;
-            DateTime PastYearDate = dogumTarihi.AddYears(Years);
-            int Months = 0;
-            for (int i = 1; i <= 12; i++)
+            var now = DateTime.Now;
+            var years = new DateTime(DateTime.Now.Subtract(dogumTarihi).Ticks).Year - 1;
+            var pastYearDate = dogumTarihi.AddYears(years);
+            var months = 0;
+            for (var i = 1; i <= 12; i++)
             {
-                if (PastYearDate.AddMonths(i) == Now)
+                if (pastYearDate.AddMonths(i) == now)
                 {
-                    Months = i;
+                    months = i;
                     break;
                 }
-                else if (PastYearDate.AddMonths(i) >= Now)
-                {
-                    Months = i - 1;
-                    break;
-                }
+
+                if (pastYearDate.AddMonths(i) < now) continue;
+                months = i - 1;
+                break;
             }
-            return Years;
+            return years;
         }
 
         /// <summary>  
@@ -66,31 +65,29 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Yaş Bilgisi (Metinsel olarak)</returns>  
         public static string YasHesaplaMetinsel(DateTime dogumTarihi)
         {
-            DateTime Now = DateTime.Now;
-            int Years = new DateTime(DateTime.Now.Subtract(dogumTarihi).Ticks).Year - 1;
-            DateTime PastYearDate = dogumTarihi.AddYears(Years);
-            int Months = 0;
-            for (int i = 1; i <= 12; i++)
+            var now = DateTime.Now;
+            var years = new DateTime(DateTime.Now.Subtract(dogumTarihi).Ticks).Year - 1;
+            var pastYearDate = dogumTarihi.AddYears(years);
+            var months = 0;
+            for (var i = 1; i <= 12; i++)
             {
-                if (PastYearDate.AddMonths(i) == Now)
+                if (pastYearDate.AddMonths(i) == now)
                 {
-                    Months = i;
+                    months = i;
                     break;
                 }
-                else if (PastYearDate.AddMonths(i) >= Now)
-                {
-                    Months = i - 1;
-                    break;
-                }
+
+                if (pastYearDate.AddMonths(i) < now) continue;
+                months = i - 1;
+                break;
             }
-            int Days = Now.Subtract(PastYearDate.AddMonths(Months)).Days;
-            int Hours = Now.Subtract(PastYearDate).Hours;
-            int Minutes = Now.Subtract(PastYearDate).Minutes;
-            int Seconds = Now.Subtract(PastYearDate).Seconds;
-            return String.Format("Yaş: {0} Yıl {1} Ay {2} Gün",
-            Years, Months, Days);
+            var days = now.Subtract(pastYearDate.AddMonths(months)).Days;
+            var hours = now.Subtract(pastYearDate).Hours;
+            var minutes = now.Subtract(pastYearDate).Minutes;
+            var seconds = now.Subtract(pastYearDate).Seconds;
+            return $"Yaş: {years} Yıl {months} Ay {days} Gün";
             //return String.Format("Yaş: {0} Yıl {1} Ay {2} Gün {3} Saat {4} Saniye",
-            //Years, Months, Days, Hours, Seconds);
+            //years, months, Days, Hours, Seconds);
         }
 
         /// <summary>  
@@ -101,38 +98,28 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Tarih Aralığı Bilgisi</returns>  
         public static string TarihAraligiHesapla(DateTime baslangicTarihi, DateTime bitisTarihi)
         {
-            int Years = new DateTime(bitisTarihi.Subtract(baslangicTarihi).Ticks).Year - 1;
-            DateTime PastYearDate = baslangicTarihi.AddYears(Years);
-            int Months = 0;
-            for (int i = 1; i <= 12; i++)
+            var years = new DateTime(bitisTarihi.Subtract(baslangicTarihi).Ticks).Year - 1;
+            var pastYearDate = baslangicTarihi.AddYears(years);
+            var months = 0;
+            for (var i = 1; i <= 12; i++)
             {
-                if (PastYearDate.AddMonths(i) == bitisTarihi)
+                if (pastYearDate.AddMonths(i) == bitisTarihi)
                 {
-                    Months = i;
+                    months = i;
                     break;
                 }
-                else if (PastYearDate.AddMonths(i) >= bitisTarihi)
-                {
-                    Months = i - 1;
-                    break;
-                }
+
+                if (pastYearDate.AddMonths(i) < bitisTarihi) continue;
+                months = i - 1;
+                break;
             }
-            int Days = bitisTarihi.Subtract(PastYearDate.AddMonths(Months)).Days;
-            var result = "";
-            if (Years < 10)
-                result = result + "0" + Years;
-            else
-                result = result + Years;
+            var days = bitisTarihi.Subtract(pastYearDate.AddMonths(months)).Days;
+            string result;
+            result = years.ToString().PadLeft(2, '0');
             result += " Yıl, ";
-            if (Months < 10)
-                result = result + "0" + Months;
-            else
-                result = result + Months;
+            result += months.ToString().PadLeft(2, '0');
             result += " Ay, ";
-            if (Days < 10)
-                result = result + "0" + Days;
-            else
-                result = result + Days;
+            result += days.ToString().PadLeft(2, '0');
             result += " Gün";
             return result;
         }
@@ -153,7 +140,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
             var baslangicMi = false;
             var bitisMi = false;
             var aylikGunSayisi = 0;
-            for (DateTime date = (DateTime)baslangicTarihi; date <= (DateTime)bitisTarihi; date = date.AddDays(1))
+            for (var date = (DateTime)baslangicTarihi; date <= (DateTime)bitisTarihi; date = date.AddDays(1))
             {
                 if (!artacakMi)
                     result++;
@@ -193,6 +180,6 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <param name="lValue">İlk tarih bilgisi</param>
         /// <param name="rValue">Son tarih bilgisi</param>
         /// <returns>Ay Farkı Bilgisi</returns>
-        public static int AyFarki(DateTime lValue, DateTime rValue) => Math.Abs((lValue.Month - rValue.Month) + 12 * (lValue.Year - rValue.Year));
+        public static int AyFarki(DateTime lValue, DateTime rValue) => Math.Abs(lValue.Month - rValue.Month + 12 * (lValue.Year - rValue.Year));
     }
 }

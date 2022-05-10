@@ -15,7 +15,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Dosya Türü Bilgisi</returns>
         public static string GetirIcerikTipiDosyaUzantisiIle(string extension)
         {
-            string contentType = String.Empty;
+            var contentType = String.Empty;
             extension = extension.Replace(".", "").ToLower();
             switch (extension)
             {
@@ -84,14 +84,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         {
             extension = extension.ToLower();
 
-            if (extension == ".jpg" || extension == ".bmp" || extension == ".png" || extension == ".doc" || extension == ".docx" || extension == ".ppt" || extension == ".pptx" || extension == ".xls" || extension == ".xlsx" || extension == ".rar" || extension == ".zip" || extension == ".7z" || extension == ".pdf" || extension == ".txt" || extension == ".rtf")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return extension == ".jpg" || extension == ".bmp" || extension == ".png" || extension == ".doc" || extension == ".docx" || extension == ".ppt" || extension == ".pptx" || extension == ".xls" || extension == ".xlsx" || extension == ".rar" || extension == ".zip" || extension == ".7z" || extension == ".pdf" || extension == ".txt" || extension == ".rtf";
         }
 
         /// <summary>
@@ -102,7 +95,6 @@ namespace CSharpHelperMethods.YardimciSiniflar
         public static bool DosyaKilitliMi(FileInfo dosya)
         {
             FileStream stream = null;
-
             try
             {
                 stream = dosya.Open(FileMode.Open, FileAccess.ReadWrite, FileShare.None);
@@ -116,8 +108,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
             }
             finally
             {
-                if (stream != null)
-                    stream.Close();
+                stream?.Close();
             }
 
             //file is not locked
@@ -132,10 +123,10 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Evet veya Hayır Bilgisi</returns>
         public static bool GuvenliDizinOlustur(string dizinYolu)
         {
-            bool isExists = System.IO.Directory.Exists(dizinYolu);
+            var isExists = Directory.Exists(dizinYolu);
 
             if (!isExists)
-                System.IO.Directory.CreateDirectory(dizinYolu);
+                Directory.CreateDirectory(dizinYolu);
             return isExists;
         }
     }
