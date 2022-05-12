@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Text;
+using static System.String;
 
 namespace CSharpHelperMethods.YardimciSiniflar
 {
@@ -25,7 +26,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
 
         public static int Compare(string x, string y)
         {
-            if (string.IsNullOrEmpty(x) || string.IsNullOrEmpty(y)) return 0;
+            if (IsNullOrEmpty(x) || IsNullOrEmpty(y)) return 0;
             var thisMarker = 0;
             var thatMarker = 0;
 

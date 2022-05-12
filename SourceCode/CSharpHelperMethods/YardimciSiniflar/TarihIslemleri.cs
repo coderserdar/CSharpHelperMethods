@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CSharpHelperMethods.YardimciSiniflar
 {
@@ -114,14 +115,14 @@ namespace CSharpHelperMethods.YardimciSiniflar
                 break;
             }
             var days = bitisTarihi.Subtract(pastYearDate.AddMonths(months)).Days;
-            string result;
-            result = years.ToString().PadLeft(2, '0');
-            result += " Yıl, ";
-            result += months.ToString().PadLeft(2, '0');
-            result += " Ay, ";
-            result += days.ToString().PadLeft(2, '0');
-            result += " Gün";
-            return result;
+            var result = new StringBuilder();
+            result.Append(years.ToString().PadLeft(2, '0'));
+            result.Append(" Yıl, ");
+            result.Append(months.ToString().PadLeft(2, '0'));
+            result.Append(" Ay, ");
+            result.Append(days.ToString().PadLeft(2, '0'));
+            result.Append(" Gün");
+            return result.ToString();
         }
 
         /// <summary>  
@@ -169,7 +170,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
                 }
 
             }
-            if (baslangicTarihi?.Day > bitisTarihi?.Day)
+            if (baslangicTarihi.Value.Day > bitisTarihi.Value.Day)
                 result--;
             return result;
         }

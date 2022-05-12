@@ -29,12 +29,14 @@ namespace CSharpHelperMethods.YardimciSiniflar
             decimal val;
             if (metin.Contains("_") || metin.Contains(".") || metin.Contains("."))
             {
-                if (!decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val))
+                if (!decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number,
+                        CultureInfo.InvariantCulture, out val))
                     return 0;
                 return val / 100;
             }
 
-            var value = decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number, CultureInfo.InvariantCulture, out val);
+            var value = decimal.TryParse(metin.Replace(",", "").Replace(".", "").Replace("_", ""), NumberStyles.Number,
+                CultureInfo.InvariantCulture, out val);
             return value ? val : 0;
         }
 
@@ -49,13 +51,13 @@ namespace CSharpHelperMethods.YardimciSiniflar
             var sTutar = tutar.ToString("F2").Replace('.', ','); // Replace('.',',') ondalık ayracının . olma durumu için            
             var lira = sTutar.Substring(0, sTutar.IndexOf(',')); //tutarın tam kısmı
             var kurus = sTutar.Substring(sTutar.IndexOf(',') + 1, 2);
-            var yazi = "";
+            var yazi = new StringBuilder();
 
-            var birler = new[] { "", "BİR", "İKİ", "ÜÇ", "DÖRT", "BEŞ", "ALTI", "YEDİ", "SEKİZ", "DOKUZ" };
-            var onlar = new[] { "", "ON", "YİRMİ", "OTUZ", "KIRK", "ELLİ", "ALTMIŞ", "YETMİŞ", "SEKSEN", "DOKSAN" };
-            var binler = new[] { "KATRİLYON", "TRİLYON", "MİLYAR", "MİLYON", "BİN", "" };
+            var birler = new[] {"", "BİR", "İKİ", "ÜÇ", "DÖRT", "BEŞ", "ALTI", "YEDİ", "SEKİZ", "DOKUZ"};
+            var onlar = new[] {"", "ON", "YİRMİ", "OTUZ", "KIRK", "ELLİ", "ALTMIŞ", "YETMİŞ", "SEKSEN", "DOKSAN"};
+            var binler = new[] {"KENTRİLYON", "KATRİLYON", "TRİLYON", "MİLYAR", "MİLYON", "BİN", ""};
 
-            const int grupSayisi = 6;
+            const int grupSayisi = 7;
             //sayıdaki 3'lü grup sayısı. katrilyon içi 6. (1.234,00 daki grup sayısı 2'dir.)
             //KATRİLYON'un başına ekleyeceğiniz her değer için grup sayısını artırınız.
 
@@ -63,44 +65,36 @@ namespace CSharpHelperMethods.YardimciSiniflar
 
             for (var i = 0; i < grupSayisi * 3; i += 3) //sayı 3'erli gruplar halinde ele alınıyor.
             {
-                var grupDegeri = "";
+                var grupDegeri = new StringBuilder();
 
                 if (lira.Substring(i, 1) != "0")
-                    grupDegeri += birler[Convert.ToInt32(lira.Substring(i, 1))] + "YÜZ"; //yüzler                
+                    grupDegeri.Append(birler[Convert.ToInt32(lira.Substring(i, 1))] + "YÜZ"); //yüzler       
+                if (grupDegeri.ToString().Equals("BİRYÜZ"))
+                    grupDegeri.Replace("BİRYÜZ", "YÜZ");
+                grupDegeri.Append(onlar[Convert.ToInt32(lira.Substring(i + 1, 1))]); //onlar
+                grupDegeri.Append(birler[Convert.ToInt32(lira.Substring(i + 2, 1))]);//birler                
+                if (grupDegeri.Length > 0) //binler
+                    grupDegeri.Append(binler[i / 3]);
+                if (grupDegeri.ToString().Equals("BİRBİN"))
+                    grupDegeri.Replace("BİRBİN", "BİN");
 
-                if (grupDegeri == "BİRYÜZ") //biryüz düzeltiliyor.
-                    grupDegeri = "YÜZ";
-
-                grupDegeri += onlar[Convert.ToInt32(lira.Substring(i + 1, 1))]; //onlar
-
-                grupDegeri += birler[Convert.ToInt32(lira.Substring(i + 2, 1))]; //birler                
-
-                if (grupDegeri != "") //binler
-                    grupDegeri += binler[i / 3];
-
-                if (grupDegeri == "BİRBİN") //birbin düzeltiliyor.
-                    grupDegeri = "BİN";
-
-                yazi += grupDegeri;
+                yazi.Append(grupDegeri);
             }
 
-            if (yazi != "")
-                yazi += " TL ";
+            if (yazi.Length > 0)
+                yazi.Append(" TL ");
 
             var yaziUzunlugu = yazi.Length;
 
             if (kurus.Substring(0, 1) != "0") //kuruş onlar
-                yazi += onlar[Convert.ToInt32(kurus.Substring(0, 1))];
+                yazi.Append(onlar[Convert.ToInt32(kurus.Substring(0, 1))]);
 
             if (kurus.Substring(1, 1) != "0") //kuruş birler
-                yazi += birler[Convert.ToInt32(kurus.Substring(1, 1))];
+                yazi.Append(birler[Convert.ToInt32(kurus.Substring(1, 1))]);
 
-            if (yazi.Length > yaziUzunlugu)
-                yazi += " Kr.";
-            else
-                yazi += "SIFIR Kr.";
+            yazi.Append(yazi.Length > yaziUzunlugu ? " KR." : "SIFIR KR.");
 
-            return yazi;
+            return yazi.ToString();
         }
 
         /// <summary>
@@ -113,10 +107,11 @@ namespace CSharpHelperMethods.YardimciSiniflar
             var sb = new StringBuilder();
             for (var i = 0; i < 6; i++)
             {
-                var ascii = rastgele.Next(48, 57);//Rakamlar
+                var ascii = rastgele.Next(48, 57); //Rakamlar
                 var karakter = Convert.ToChar(ascii);
                 sb.Append(karakter);
             }
+
             return sb.ToString();
         }
     }

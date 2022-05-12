@@ -1,4 +1,5 @@
-﻿using CSharpHelperMethods.YardimciSiniflar;
+﻿using System.Drawing;
+using CSharpHelperMethods.YardimciSiniflar;
 using System.Text;
 using System.Windows.Forms;
 
@@ -11,14 +12,14 @@ namespace CSharpHelperMethods
             InitializeComponent();
         }
 
-        #region Formun Yüklenmesi ve Panel Seçimi
+        #region Formun Yüklenmesi, Panel Seçimi ve ListBox Düzenlemeleri
         /// <summary>
-        /// Form İlk Yüklendiği zaman ekrandaki bütün panellerin erişilemez hale getirilmesi sağlanıyor
-        /// Bu metotta, çünkü hangi panelin akttifleşeceğinin
+        /// Form İlk Yüklendiği zaman ekrandaki bütün panellerin erişilemez hale getirilmesi
+        /// sağlanıyor Bu metotta, çünkü hangi panelin aktifleşeceğinin
         /// Combobox üzerinden seçilmesi lazım
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void FrmAnaSayfa_Load(object sender, System.EventArgs e)
         {
             cmbIslemTuru.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -29,6 +30,23 @@ namespace CSharpHelperMethods
             pnlKisiIslemleri.Enabled = false;
             pnlMetinIslemleri.Enabled = false;
             #endregion
+            #region Bütün Listboxların MultiLine Yapılması
+            lbMetinSonuc.DrawMode = DrawMode.OwnerDrawVariable;
+            lbMetinSonuc.MeasureItem += listBox_MeasureItem;
+            lbMetinSonuc.DrawItem += listBox_DrawItem;
+            lbSayiSonuc.DrawMode = DrawMode.OwnerDrawVariable;
+            lbSayiSonuc.MeasureItem += listBox_MeasureItem;
+            lbSayiSonuc.DrawItem += listBox_DrawItem;
+            lbKisiSonuc.DrawMode = DrawMode.OwnerDrawVariable;
+            lbKisiSonuc.MeasureItem += listBox_MeasureItem;
+            lbKisiSonuc.DrawItem += listBox_DrawItem;
+            lbSifreSonuc.DrawMode = DrawMode.OwnerDrawVariable;
+            lbSifreSonuc.MeasureItem += listBox_MeasureItem;
+            lbSifreSonuc.DrawItem += listBox_DrawItem;
+            lbSonuc.DrawMode = DrawMode.OwnerDrawVariable;
+            lbSonuc.MeasureItem += listBox_MeasureItem;
+            lbSonuc.DrawItem += listBox_DrawItem;
+            #endregion
         }
 
         /// <summary>
@@ -37,8 +55,8 @@ namespace CSharpHelperMethods
         /// Eğer bir şey seçilmemişse, tamamının erişilemez hale getirilmesi için
         /// Gerekli işlemlerin gerçekleştirildiği metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void cmbIslemTuru_SelectedIndexChanged(object sender, System.EventArgs e)
         {
             #region Combobox'tan Seçilen Değere Göre İlgili Paneli Aktif Hale Getirme
@@ -107,15 +125,45 @@ namespace CSharpHelperMethods
             }
             #endregion
         }
+        
+        /// <summary>
+        /// This method is used to meaure the length of the item in listbox and make it multi line
+        /// without using scrollbar and let the user see more efficiently
+        /// </summary>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
+        private static void listBox_MeasureItem(object sender, MeasureItemEventArgs e)
+        {
+            if (!(sender is ListBox listBox)) return;
+            e.ItemHeight = (int) e.Graphics
+                .MeasureString(listBox.Items[e.Index].ToString(), listBox.Font, listBox.Width).Height;
+        }
+
+        /// <summary>
+        /// This method is used to meaure the length of the item in listbox and make it multi line
+        /// without using scrollbar and let the user see more efficiently
+        /// </summary>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
+        private static void listBox_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (!(sender is ListBox listBox)) return;
+            e.DrawBackground();
+            e.DrawFocusRectangle();
+            e.Graphics.DrawString(listBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
+        }
+        
         #endregion
 
         #region Tarih İşlemleri
 
         /// <summary>
-        /// Paneldeki Başlangıç Tarihi seçili ve tarih girilmişse, o tarihten bugüne kaç yaş olduğunun hesaplandığı metottur. İlgili butona tıklandığı zaman çalışır
+        /// Paneldeki Başlangıç Tarihi seçili ve tarih girilmişse,
+        /// o tarihten bugüne kaç yaş olduğunun hesaplandığı metottur.
+        /// İlgili butona tıklandığı zaman çalışır
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnYasHesapla_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked)
@@ -126,17 +174,19 @@ namespace CSharpHelperMethods
                 var sb = new StringBuilder();
                 sb.Append("Doğum tarihi seçilen kişi ");
                 sb.Append(TarihIslemleri.YasHesapla(dtpBaslangicTarihi.Value));
-                sb.Append(" yaşındadır");
+                sb.Append(" yaşının içindedir");
                 lbSonuc.Items.Add(sb.ToString());
             }
         }
 
         /// <summary>
-        /// Paneldeki Başlangıç Tarihi seçili ve tarih girilmişse, o tarihten bugüne kaç yaş olduğunun yıl, ay ve gün olarak metinsel bir şekilde hesaplandığı metottur. 
+        /// Paneldeki Başlangıç Tarihi seçili ve tarih girilmişse,
+        /// o tarihten bugüne kaç yaş olduğunun yıl, ay ve gün
+        /// olarak metinsel bir şekilde hesaplandığı metottur. 
         /// İlgili butona tıklandığı zaman çalışır
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnYasHesaplaMetinsel_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked)
@@ -155,8 +205,8 @@ namespace CSharpHelperMethods
         /// Söz konusu tarihler arasında kaç yıl, kaç ay ve gün olduğunun bilgisinin hazırlandığı metottur.
         /// İlgili butona tıklandığı zaman çalışır
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnTarihAraligi_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked || !dtpBitisTarihi.Checked)
@@ -178,8 +228,8 @@ namespace CSharpHelperMethods
         /// Söz konusu tarihler arasında kaç ay olduğunun bilgisinin hazırlandığı metottur.
         /// İlgili butona tıklandığı zaman çalışır
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnAyFarki_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked || !dtpBitisTarihi.Checked)
@@ -203,8 +253,8 @@ namespace CSharpHelperMethods
         /// Girilen metnin MD5 algoritması ile şifrelenmiş halini
         /// Listbox üzerine yazdıran metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnMd5Hash_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
@@ -224,8 +274,8 @@ namespace CSharpHelperMethods
         /// Girilen metnin SHA 256 algoritması ile şifrelenmiş halini
         /// Listbox üzerine yazdıran metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnSha256Hash_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
@@ -245,8 +295,8 @@ namespace CSharpHelperMethods
         /// Girilen metnin SHA 512 algoritması ile şifrelenmiş halini
         /// Listbox üzerine yazdıran metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnSha512Hash_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
@@ -264,8 +314,8 @@ namespace CSharpHelperMethods
         /// <summary>
         /// İlgili butona tıklandığında rastgele şifre üretilmesini sağlayan metottur
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnRastgeleSifreUret_Click(object sender, System.EventArgs e)
         {
             lbSifreSonuc.Items.Clear();
@@ -280,8 +330,8 @@ namespace CSharpHelperMethods
         /// Burada yazılan metnin bir şifre olarak belirli kriterlere uygun olup olmadığının
         /// Gösterilmesini sağlayan bir metottur
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnSifreUygunMu_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
@@ -302,8 +352,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen metnin sayısal bir değer olup olmadığını
         /// Kontrol eden ve sonucu gösteren metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnSayisalMi_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
@@ -322,8 +372,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen para birimi cinsinden rakamın
         /// Yazıya çevrilmesini sağlayan ve sonucu listbox üzerinde gösteren bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnMetneDonustur_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
@@ -345,8 +395,8 @@ namespace CSharpHelperMethods
         /// <summary>
         /// Rastgele olacak şekilde 6 haneli kod oluşturmayı sağlayan bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnOnayKoduOlustur_Click(object sender, System.EventArgs e)
         {
             lbSayiSonuc.Items.Clear();
@@ -362,8 +412,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen TC Kimlik numarasının 
         /// Standart TC Kimlik No algoritmasına uygun olup olmadığını kontrol eden bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnTcKimlikDogrula_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
@@ -386,8 +436,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen IBAN Numarasının 
         /// Standart IBAN algoritmasına uygun olup olmadığını kontrol eden bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnIbanDogrula_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
@@ -408,8 +458,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen metnin
         /// Geçerli bir e-posta adresi olup olmadığını kontrol eden bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnEPostaDogrula_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
@@ -430,8 +480,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen metnin 
         /// Kelimelerinin ilk harflerini büyük yapmaya yarayan bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnIlkHarfleriBuyukYap_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
@@ -450,8 +500,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen metnin 
         /// Sadece ilk harfini büyük yapmaya yarayan bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnIlkHarfiBuyukYap_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
@@ -470,8 +520,8 @@ namespace CSharpHelperMethods
         /// Paneldeki metin kutusuna girilen metnin 
         /// İçerisindeki Türkçe karakterleri İngilizee hallerine çeviren bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnTurkceKarakterDuzelt_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
@@ -491,8 +541,8 @@ namespace CSharpHelperMethods
         /// Matbu çıktılarda gizlenmesi gibi bir durum söz konusu olduğundan
         /// Girilen bu 10 veya 11 karakterlik metinleri şifrelemeye yarayan bir metottur
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnMetinSifrele_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
@@ -515,8 +565,8 @@ namespace CSharpHelperMethods
         /// Ekrandan çeşitli karakterler içeren telefon numaraları alındığı zaman
         /// Bu telefon numarasını olması gerektiği hale çevirmeye yarayan bir metottur.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
         private void btnTelefonNoDuzenle_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))

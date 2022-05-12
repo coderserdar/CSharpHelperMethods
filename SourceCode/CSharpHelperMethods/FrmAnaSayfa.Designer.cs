@@ -92,12 +92,7 @@
             // cmbIslemTuru
             // 
             this.cmbIslemTuru.FormattingEnabled = true;
-            this.cmbIslemTuru.Items.AddRange(new object[] {
-            "Metin İşlemleri",
-            "Tarih İşlemleri",
-            "Sayı İşlemleri",
-            "Şifre İşlemleri",
-            "Kişi İşlemleri"});
+            this.cmbIslemTuru.Items.AddRange(new object[] {"Metin İşlemleri", "Tarih İşlemleri", "Sayı İşlemleri", "Şifre İşlemleri", "Kişi İşlemleri"});
             this.cmbIslemTuru.Location = new System.Drawing.Point(132, 13);
             this.cmbIslemTuru.Name = "cmbIslemTuru";
             this.cmbIslemTuru.Size = new System.Drawing.Size(200, 21);
@@ -185,7 +180,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 109);
+            this.label4.Location = new System.Drawing.Point(18, 109);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 7;
@@ -195,9 +190,9 @@
             // 
             this.lbSonuc.FormattingEnabled = true;
             this.lbSonuc.HorizontalScrollbar = true;
-            this.lbSonuc.Location = new System.Drawing.Point(117, 109);
+            this.lbSonuc.Location = new System.Drawing.Point(62, 105);
             this.lbSonuc.Name = "lbSonuc";
-            this.lbSonuc.Size = new System.Drawing.Size(200, 69);
+            this.lbSonuc.Size = new System.Drawing.Size(256, 69);
             this.lbSonuc.TabIndex = 6;
             // 
             // dtpBitisTarihi
@@ -308,7 +303,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(74, 104);
+            this.label6.Location = new System.Drawing.Point(21, 100);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 13);
             this.label6.TabIndex = 13;
@@ -318,9 +313,9 @@
             // 
             this.lbSifreSonuc.FormattingEnabled = true;
             this.lbSifreSonuc.HorizontalScrollbar = true;
-            this.lbSifreSonuc.Location = new System.Drawing.Point(118, 100);
+            this.lbSifreSonuc.Location = new System.Drawing.Point(65, 100);
             this.lbSifreSonuc.Name = "lbSifreSonuc";
-            this.lbSifreSonuc.Size = new System.Drawing.Size(200, 69);
+            this.lbSifreSonuc.Size = new System.Drawing.Size(251, 69);
             this.lbSifreSonuc.TabIndex = 12;
             // 
             // btnMd5Hash
@@ -673,7 +668,6 @@
             this.pnlMetinIslemleri.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

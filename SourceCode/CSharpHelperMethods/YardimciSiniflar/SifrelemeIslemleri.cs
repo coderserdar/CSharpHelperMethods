@@ -21,7 +21,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         {
             var sha512 = new SHA512Managed();
             var encryptedSha512 = sha512.ComputeHash(Encoding.UTF8.GetBytes(text));
-            var strHex = encryptedSha512.Aggregate("", (current, b) => current + $"{b:x2}");
+            var strHex = encryptedSha512.Aggregate("", (current, b) => $"{current}{b:x2}");
             return strHex.ToUpper();
         }
 
@@ -32,7 +32,7 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <returns>Girdi Metninin Şifrelenmiş Hali</returns>
         public static string HesaplaSHA256(string text)
         {
-            var sha256 = SHA256Managed.Create();
+            var sha256 = SHA256.Create();
             var bytes = Encoding.UTF8.GetBytes(text);
             var hash = sha256.ComputeHash(bytes);
             var result = new StringBuilder();
@@ -99,18 +99,18 @@ namespace CSharpHelperMethods.YardimciSiniflar
         /// <summary>
         /// 8 karakter uzunluğunda Rastgele şifre oluşturur.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Şifrelenmiş Metin Bilgisi</returns>
         public static string RastgeleSifreUret()
         {
             var sifreUzunluk = 8;
             const string gecerliKarakterler = "abcdefghijklmnozABCDEFGHIJKLMNOZ1234567890";
-            var strB = new StringBuilder(100);
+            var sifre = new StringBuilder(100);
             var random = new Random();
             while (0 < sifreUzunluk--)
             {
-                strB.Append(gecerliKarakterler[random.Next(gecerliKarakterler.Length)]);
+                sifre.Append(gecerliKarakterler[random.Next(gecerliKarakterler.Length)]);
             }
-            return strB.ToString();
+            return sifre.ToString();
         }
     }
 }
