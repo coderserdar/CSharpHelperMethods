@@ -54,6 +54,7 @@
     <Compile Include="YardimciSiniflar\DosyaIslemleri.cs" />
     <Compile Include="YardimciSiniflar\KisiIslemleri.cs" />
     <Compile Include="YardimciSiniflar\MetinIslemleri.cs" />
+    <Compile Include="YardimciSiniflar\Sabitler.cs" />
     <Compile Include="YardimciSiniflar\SayiIslemleri.cs" />
     <Compile Include="YardimciSiniflar\SifrelemeIslemleri.cs" />
     <Compile Include="YardimciSiniflar\SiralamaIslemleri.cs" />

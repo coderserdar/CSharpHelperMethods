@@ -167,7 +167,7 @@ namespace CSharpHelperMethods
         private void btnYasHesapla_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked)
-                MessageBox.Show("Başlangıç Tarihi girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.BaslangicTarihiGirilmedi);
             else
             {
                 lbSonuc.Items.Clear();
@@ -190,7 +190,7 @@ namespace CSharpHelperMethods
         private void btnYasHesaplaMetinsel_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked)
-                MessageBox.Show("Başlangıç Tarihi girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.BaslangicTarihiGirilmedi);
             else
             {
                 lbSonuc.Items.Clear();
@@ -210,9 +210,9 @@ namespace CSharpHelperMethods
         private void btnTarihAraligi_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked || !dtpBitisTarihi.Checked)
-                MessageBox.Show("Başlangıç Tarihi veya Bitiş Tarihi girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.BaslangicVeyaBitisTarihiGirilmedi);
             else if (dtpBaslangicTarihi.Value.Date > dtpBitisTarihi.Value.Date)
-                MessageBox.Show("Başlangıç Tarihi Bitiş Tarihinden büyük olamaz");
+                MessageBox.Show(Sabitler.BaslangicTarihiBuyuk);
             else
             {
                 lbSonuc.Items.Clear();
@@ -233,9 +233,9 @@ namespace CSharpHelperMethods
         private void btnAyFarki_Click(object sender, System.EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked || !dtpBitisTarihi.Checked)
-                MessageBox.Show("Başlangıç Tarihi veya Bitiş Tarihi girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.BaslangicVeyaBitisTarihiGirilmedi);
             else if (dtpBaslangicTarihi.Value.Date > dtpBitisTarihi.Value.Date)
-                MessageBox.Show("Başlangıç Tarihi Bitiş Tarihinden büyük olamaz");
+                MessageBox.Show(Sabitler.BaslangicTarihiBuyuk);
             else
             {
                 lbSonuc.Items.Clear();
@@ -258,7 +258,7 @@ namespace CSharpHelperMethods
         private void btnMd5Hash_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
-                MessageBox.Show("Şifrelenecek metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.SifrelenecekMetinGirilmedi);
             else
             {
                 lbSifreSonuc.Items.Clear();
@@ -279,7 +279,7 @@ namespace CSharpHelperMethods
         private void btnSha256Hash_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
-                MessageBox.Show("Şifrelenecek metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.SifrelenecekMetinGirilmedi);
             else
             {
                 lbSifreSonuc.Items.Clear();
@@ -300,7 +300,7 @@ namespace CSharpHelperMethods
         private void btnSha512Hash_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
-                MessageBox.Show("Şifrelenecek metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.SifrelenecekMetinGirilmedi);
             else
             {
                 lbSifreSonuc.Items.Clear();
@@ -335,7 +335,7 @@ namespace CSharpHelperMethods
         private void btnSifreUygunMu_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
-                MessageBox.Show("Şifre metni girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.SifreMetniGirilmedi);
             else
             {
                 lbSifreSonuc.Items.Clear();
@@ -357,7 +357,7 @@ namespace CSharpHelperMethods
         private void btnSayisalMi_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else
             {
                 lbSayiSonuc.Items.Clear();
@@ -377,9 +377,9 @@ namespace CSharpHelperMethods
         private void btnMetneDonustur_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else if (!SayiIslemleri.SayisalMi(txtSayi.Text.Trim().Replace(",", ".").Replace(".", "")))
-                MessageBox.Show("Girilen metin sayısal bir değer olmadığı için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinSayisalDegil);
             else
             {
                 var metinSadeceSayiKismi = txtSayi.Text.Trim();
@@ -417,11 +417,11 @@ namespace CSharpHelperMethods
         private void btnTcKimlikDogrula_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else if (!SayiIslemleri.SayisalMi(txtKisiMetni.Text.Trim()))
-                MessageBox.Show("Girilen metin sayısal bir değer olmadığı için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinSayisalDegil);
             else if (txtKisiMetni.Text.Trim().Length != 11)
-                MessageBox.Show("Girilen metin 11 karakter olmadığı için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinTcKimlikNoDegil);
             else
             {
                 lbKisiSonuc.Items.Clear();
@@ -441,9 +441,9 @@ namespace CSharpHelperMethods
         private void btnIbanDogrula_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else if (txtKisiMetni.Text.Trim().Length != 26)
-                MessageBox.Show("Girilen metin 26 karakter olmadığı için bu işlem gerçekleştirilemez. Karakter sayısı: " + txtKisiMetni.Text.Trim().Length);
+                MessageBox.Show(Sabitler.MetinIbanNoDegil + txtKisiMetni.Text.Trim().Length);
             else
             {
                 lbKisiSonuc.Items.Clear();
@@ -463,7 +463,7 @@ namespace CSharpHelperMethods
         private void btnEPostaDogrula_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else
             {
                 lbKisiSonuc.Items.Clear();
@@ -485,7 +485,7 @@ namespace CSharpHelperMethods
         private void btnIlkHarfleriBuyukYap_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else
             {
                 lbMetinSonuc.Items.Clear();
@@ -505,7 +505,7 @@ namespace CSharpHelperMethods
         private void btnIlkHarfiBuyukYap_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else
             {
                 lbMetinSonuc.Items.Clear();
@@ -525,7 +525,7 @@ namespace CSharpHelperMethods
         private void btnTurkceKarakterDuzelt_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else
             {
                 lbMetinSonuc.Items.Clear();
@@ -546,11 +546,11 @@ namespace CSharpHelperMethods
         private void btnMetinSifrele_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else if (!SayiIslemleri.SayisalMi(txtMetin.Text.Trim()))
-                MessageBox.Show("Girilen metin sayısal bir değer olmadığı için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinSayisalDegil);
             else if (txtMetin.Text.Trim().Length != 11 && txtMetin.Text.Trim().Length != 10)
-                MessageBox.Show("Girilen metin 10 veya 11 karakter olmadığı için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinTcKimlikNoVeyaVergiNoDegil);
             else
             {
                 lbMetinSonuc.Items.Clear();
@@ -570,7 +570,7 @@ namespace CSharpHelperMethods
         private void btnTelefonNoDuzenle_Click(object sender, System.EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
-                MessageBox.Show("Metin girilmediği için bu işlem gerçekleştirilemez");
+                MessageBox.Show(Sabitler.MetinGirilmedi);
             else
             {
                 lbMetinSonuc.Items.Clear();
