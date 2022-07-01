@@ -43,17 +43,11 @@ namespace CSharpHelperMethods.YardimciSiniflar
             var now = DateTime.Now;
             var years = new DateTime(DateTime.Now.Subtract(dogumTarihi).Ticks).Year - 1;
             var pastYearDate = dogumTarihi.AddYears(years);
-            var months = 0;
             for (var i = 1; i <= 12; i++)
             {
                 if (pastYearDate.AddMonths(i) == now)
-                {
-                    months = i;
                     break;
-                }
-
                 if (pastYearDate.AddMonths(i) < now) continue;
-                months = i - 1;
                 break;
             }
             return years;
@@ -83,9 +77,9 @@ namespace CSharpHelperMethods.YardimciSiniflar
                 break;
             }
             var days = now.Subtract(pastYearDate.AddMonths(months)).Days;
-            var hours = now.Subtract(pastYearDate).Hours;
-            var minutes = now.Subtract(pastYearDate).Minutes;
-            var seconds = now.Subtract(pastYearDate).Seconds;
+            // var hours = now.Subtract(pastYearDate).Hours;
+            // var minutes = now.Subtract(pastYearDate).Minutes;
+            // var seconds = now.Subtract(pastYearDate).Seconds;
             return $"Yaş: {years} Yıl {months} Ay {days} Gün";
             //return String.Format("Yaş: {0} Yıl {1} Ay {2} Gün {3} Saat {4} Saniye",
             //years, months, Days, Hours, Seconds);
