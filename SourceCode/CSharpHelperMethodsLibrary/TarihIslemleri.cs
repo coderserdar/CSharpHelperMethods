@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace CSharpHelperMethods.YardimciSiniflar
+namespace CSharpHelperMethodsLibrary
 {
     /// <summary>
     /// Tarihsel veri kontrol metotlarını barındıran sınıf

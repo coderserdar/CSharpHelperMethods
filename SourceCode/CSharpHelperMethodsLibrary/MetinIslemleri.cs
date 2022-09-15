@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CSharpHelperMethods.YardimciSiniflar
+namespace CSharpHelperMethodsLibrary
 {
     /// <summary>
     /// Metinsel veri kontrol metotlarını barındıran sınıf

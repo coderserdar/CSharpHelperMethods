@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CSharpHelperMethods.YardimciSiniflar
+namespace CSharpHelperMethodsLibrary
 {
     /// <summary>
     /// Şifre ile ilgili işlemler sınıfı

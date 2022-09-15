@@ -25,3 +25,15 @@ C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMeth
 C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csproj.CoreCompileInputs.cache
 C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.exe
 C:\Users\serdar\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\bin\Debug\CSharpHelperMethods.exe
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\bin\Debug\CSharpHelperMethods.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\bin\Debug\CSharpHelperMethodsLibrary.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\bin\Debug\CSharpHelperMethodsLibrary.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csprojAssemblyReference.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.FrmAnaSayfa.resources
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.Properties.Resources.resources
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csproj.GenerateResource.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csproj.CoreCompileInputs.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.csproj.CopyComplete
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.exe
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods\obj\Debug\CSharpHelperMethods.pdb

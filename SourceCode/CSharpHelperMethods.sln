@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1684
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethods", "CSharpHelperMethods\CSharpHelperMethods.csproj", "{BE02934F-770B-411C-AA8C-43B2EFA18625}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethodsLibrary", "CSharpHelperMethodsLibrary\CSharpHelperMethodsLibrary.csproj", "{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BE02934F-770B-411C-AA8C-43B2EFA18625}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE02934F-770B-411C-AA8C-43B2EFA18625}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE02934F-770B-411C-AA8C-43B2EFA18625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

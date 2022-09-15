@@ -1,0 +1,6 @@
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethodsLibrary\bin\Debug\CSharpHelperMethodsLibrary.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethodsLibrary\bin\Debug\CSharpHelperMethodsLibrary.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethodsLibrary\obj\Debug\CSharpHelperMethodsLibrary.csprojAssemblyReference.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethodsLibrary\obj\Debug\CSharpHelperMethodsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethodsLibrary\obj\Debug\CSharpHelperMethodsLibrary.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethodsLibrary\obj\Debug\CSharpHelperMethodsLibrary.pdb

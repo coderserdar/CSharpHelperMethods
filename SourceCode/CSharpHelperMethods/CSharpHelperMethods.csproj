@@ -50,15 +50,6 @@
     <Compile Include="FrmAnaSayfa.Designer.cs">
       <DependentUpon>FrmAnaSayfa.cs</DependentUpon>
     </Compile>
-    <Compile Include="YardimciSiniflar\DataTableIslemleri.cs" />
-    <Compile Include="YardimciSiniflar\DosyaIslemleri.cs" />
-    <Compile Include="YardimciSiniflar\KisiIslemleri.cs" />
-    <Compile Include="YardimciSiniflar\MetinIslemleri.cs" />
-    <Compile Include="YardimciSiniflar\Sabitler.cs" />
-    <Compile Include="YardimciSiniflar\SayiIslemleri.cs" />
-    <Compile Include="YardimciSiniflar\SifrelemeIslemleri.cs" />
-    <Compile Include="YardimciSiniflar\SiralamaIslemleri.cs" />
-    <Compile Include="YardimciSiniflar\TarihIslemleri.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmAnaSayfa.resx">
@@ -83,6 +74,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CSharpHelperMethodsLibrary\CSharpHelperMethodsLibrary.csproj">
+      <Project>{06f5d9a1-3b03-4a3e-841e-39a3ae0aff66}</Project>
+      <Name>CSharpHelperMethodsLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

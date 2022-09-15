@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text;
 using static System.String;
 
-namespace CSharpHelperMethods.YardimciSiniflar
+namespace CSharpHelperMethodsLibrary
 {
     /// <summary>
     /// Alfa numerik sıralama için hazırlanmış bir metod

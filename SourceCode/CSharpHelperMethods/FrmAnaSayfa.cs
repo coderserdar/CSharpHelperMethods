@@ -1,5 +1,5 @@
 ﻿using System.Drawing;
-using CSharpHelperMethods.YardimciSiniflar;
+using CSharpHelperMethodsLibrary;
 using System.Text;
 using System.Windows.Forms;
 

@@ -1,4 +1,4 @@
-﻿namespace CSharpHelperMethods.YardimciSiniflar
+﻿namespace CSharpHelperMethodsLibrary
 {
     /// <summary>
     /// Metin Sabitlerinin Bulunduğu Sınıf
