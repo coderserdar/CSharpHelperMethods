@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using CSharpHelperMethodsLibrary;
 using System.Text;
 using System.Windows.Forms;
@@ -578,6 +579,26 @@ namespace CSharpHelperMethods
                 sb.Append("Telefon Numarasının Düzenlenmiş Hali: ");
                 sb.Append(MetinIslemleri.TelefonNoDuzenle(txtMetin.Text.Trim()));
                 lbMetinSonuc.Items.Add(sb.ToString());
+            }
+        }
+        
+        /// <summary>
+        /// Ekrandan girilen metnin geçerli bir e-posta adresi olup olmadığını kontrol eden
+        /// Sonucu listbox'a yazdıran metottur.
+        /// </summary>
+        /// <param name="sender">The sender info (For example Main Form)</param>
+        /// <param name="e">Event Arguments</param>
+        private void btnEPostaKontrol_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
+                MessageBox.Show(Sabitler.MetinGirilmedi);
+            else
+            {
+                lbMetinSonuc.Items.Clear();
+                var sb = new StringBuilder();
+                var gecerliMi = MetinIslemleri.MailAdresiGecerliMi(txtMetin.Text.Trim());
+                lbMetinSonuc.Items.Add(txtMetin.Text.Trim());
+                lbMetinSonuc.Items.Add(gecerliMi ? Sabitler.EPostaAdresiGecerli : Sabitler.EPostaAdresiGecerliDegil);
             }
         }
         #endregion

@@ -16,5 +16,7 @@
         public const string MetinTcKimlikNoDegil = "Girilen metin 11 karakter olmadığı için bu işlem gerçekleştirilemez. Karakter Sayısı: ";
         public const string MetinIbanNoDegil = "Girilen metin 26 karakter olmadığı için bu işlem gerçekleştirilemez.";
         public const string MetinTcKimlikNoVeyaVergiNoDegil = "Girilen metin 10 veya 11 karakter olmadığı için bu işlem gerçekleştirilemez.";
+        public const string EPostaAdresiGecerli = "Girilen e-posta adresi geçerli bir e-posta adresidir";
+        public const string EPostaAdresiGecerliDegil = "Girilen e-posta adresi geçerli bir e-posta adresi değildir";
     }
 }

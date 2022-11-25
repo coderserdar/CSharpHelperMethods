@@ -82,6 +82,7 @@
             this.btnIlkHarfleriBuyukYap = new System.Windows.Forms.Button();
             this.txtMetin = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.btnEPostaKontrol = new System.Windows.Forms.Button();
             this.pnlTarihIslemleri.SuspendLayout();
             this.pnlSifreIslemleri.SuspendLayout();
             this.pnlSayiIslemleri.SuspendLayout();
@@ -93,18 +94,20 @@
             // 
             this.cmbIslemTuru.FormattingEnabled = true;
             this.cmbIslemTuru.Items.AddRange(new object[] {"Metin İşlemleri", "Tarih İşlemleri", "Sayı İşlemleri", "Şifre İşlemleri", "Kişi İşlemleri"});
-            this.cmbIslemTuru.Location = new System.Drawing.Point(132, 13);
+            this.cmbIslemTuru.Location = new System.Drawing.Point(176, 16);
+            this.cmbIslemTuru.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbIslemTuru.Name = "cmbIslemTuru";
-            this.cmbIslemTuru.Size = new System.Drawing.Size(200, 21);
+            this.cmbIslemTuru.Size = new System.Drawing.Size(265, 24);
             this.cmbIslemTuru.TabIndex = 0;
             this.cmbIslemTuru.SelectedIndexChanged += new System.EventHandler(this.cmbIslemTuru_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(16, 20);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(123, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "İşlem Türü Seçiniz";
             // 
@@ -122,16 +125,18 @@
             this.pnlTarihIslemleri.Controls.Add(this.dtpBaslangicTarihi);
             this.pnlTarihIslemleri.Controls.Add(this.label3);
             this.pnlTarihIslemleri.Controls.Add(this.label2);
-            this.pnlTarihIslemleri.Location = new System.Drawing.Point(15, 56);
+            this.pnlTarihIslemleri.Location = new System.Drawing.Point(20, 69);
+            this.pnlTarihIslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTarihIslemleri.Name = "pnlTarihIslemleri";
-            this.pnlTarihIslemleri.Size = new System.Drawing.Size(374, 181);
+            this.pnlTarihIslemleri.Size = new System.Drawing.Size(498, 222);
             this.pnlTarihIslemleri.TabIndex = 2;
             // 
             // btnAyFarki
             // 
-            this.btnAyFarki.Location = new System.Drawing.Point(286, 76);
+            this.btnAyFarki.Location = new System.Drawing.Point(381, 94);
+            this.btnAyFarki.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAyFarki.Name = "btnAyFarki";
-            this.btnAyFarki.Size = new System.Drawing.Size(79, 23);
+            this.btnAyFarki.Size = new System.Drawing.Size(105, 28);
             this.btnAyFarki.TabIndex = 12;
             this.btnAyFarki.Text = "Ay Farkı";
             this.btnAyFarki.UseVisualStyleBackColor = true;
@@ -142,16 +147,18 @@
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Top;
             this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(71, 13);
+            this.label8.Size = new System.Drawing.Size(96, 17);
             this.label8.TabIndex = 11;
             this.label8.Text = "Tarih İşlemleri";
             // 
             // btnTarihAraligi
             // 
-            this.btnTarihAraligi.Location = new System.Drawing.Point(204, 76);
+            this.btnTarihAraligi.Location = new System.Drawing.Point(272, 94);
+            this.btnTarihAraligi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTarihAraligi.Name = "btnTarihAraligi";
-            this.btnTarihAraligi.Size = new System.Drawing.Size(76, 23);
+            this.btnTarihAraligi.Size = new System.Drawing.Size(101, 28);
             this.btnTarihAraligi.TabIndex = 10;
             this.btnTarihAraligi.Text = "Tarih Aralığı";
             this.btnTarihAraligi.UseVisualStyleBackColor = true;
@@ -159,9 +166,10 @@
             // 
             // btnYasHesaplaMetinsel
             // 
-            this.btnYasHesaplaMetinsel.Location = new System.Drawing.Point(84, 76);
+            this.btnYasHesaplaMetinsel.Location = new System.Drawing.Point(112, 94);
+            this.btnYasHesaplaMetinsel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnYasHesaplaMetinsel.Name = "btnYasHesaplaMetinsel";
-            this.btnYasHesaplaMetinsel.Size = new System.Drawing.Size(113, 23);
+            this.btnYasHesaplaMetinsel.Size = new System.Drawing.Size(151, 28);
             this.btnYasHesaplaMetinsel.TabIndex = 9;
             this.btnYasHesaplaMetinsel.Text = "Yaş Hesapla (Metin)";
             this.btnYasHesaplaMetinsel.UseVisualStyleBackColor = true;
@@ -169,9 +177,10 @@
             // 
             // btnYasHesapla
             // 
-            this.btnYasHesapla.Location = new System.Drawing.Point(3, 76);
+            this.btnYasHesapla.Location = new System.Drawing.Point(4, 94);
+            this.btnYasHesapla.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnYasHesapla.Name = "btnYasHesapla";
-            this.btnYasHesapla.Size = new System.Drawing.Size(75, 23);
+            this.btnYasHesapla.Size = new System.Drawing.Size(100, 28);
             this.btnYasHesapla.TabIndex = 8;
             this.btnYasHesapla.Text = "Yaş Hesapla";
             this.btnYasHesapla.UseVisualStyleBackColor = true;
@@ -180,9 +189,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 109);
+            this.label4.Location = new System.Drawing.Point(24, 134);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(48, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Sonuç";
             // 
@@ -190,44 +200,50 @@
             // 
             this.lbSonuc.FormattingEnabled = true;
             this.lbSonuc.HorizontalScrollbar = true;
-            this.lbSonuc.Location = new System.Drawing.Point(62, 105);
+            this.lbSonuc.ItemHeight = 16;
+            this.lbSonuc.Location = new System.Drawing.Point(83, 129);
+            this.lbSonuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbSonuc.Name = "lbSonuc";
-            this.lbSonuc.Size = new System.Drawing.Size(256, 69);
+            this.lbSonuc.Size = new System.Drawing.Size(340, 84);
             this.lbSonuc.TabIndex = 6;
             // 
             // dtpBitisTarihi
             // 
             this.dtpBitisTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBitisTarihi.Location = new System.Drawing.Point(117, 43);
+            this.dtpBitisTarihi.Location = new System.Drawing.Point(156, 53);
+            this.dtpBitisTarihi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpBitisTarihi.Name = "dtpBitisTarihi";
             this.dtpBitisTarihi.ShowCheckBox = true;
-            this.dtpBitisTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpBitisTarihi.Size = new System.Drawing.Size(265, 22);
             this.dtpBitisTarihi.TabIndex = 5;
             // 
             // dtpBaslangicTarihi
             // 
             this.dtpBaslangicTarihi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBaslangicTarihi.Location = new System.Drawing.Point(117, 17);
+            this.dtpBaslangicTarihi.Location = new System.Drawing.Point(156, 21);
+            this.dtpBaslangicTarihi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpBaslangicTarihi.Name = "dtpBaslangicTarihi";
             this.dtpBaslangicTarihi.ShowCheckBox = true;
-            this.dtpBaslangicTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpBaslangicTarihi.Size = new System.Drawing.Size(265, 22);
             this.dtpBaslangicTarihi.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 47);
+            this.label3.Location = new System.Drawing.Point(59, 58);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Bitiş Tarihi";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 24);
+            this.label2.Location = new System.Drawing.Point(23, 30);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Başlangıç Tarihi";
             // 
@@ -244,9 +260,10 @@
             this.pnlSifreIslemleri.Controls.Add(this.btnMd5Hash);
             this.pnlSifreIslemleri.Controls.Add(this.txtSifrelenecekMetin);
             this.pnlSifreIslemleri.Controls.Add(this.label5);
-            this.pnlSifreIslemleri.Location = new System.Drawing.Point(411, 56);
+            this.pnlSifreIslemleri.Location = new System.Drawing.Point(548, 69);
+            this.pnlSifreIslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSifreIslemleri.Name = "pnlSifreIslemleri";
-            this.pnlSifreIslemleri.Size = new System.Drawing.Size(377, 181);
+            this.pnlSifreIslemleri.Size = new System.Drawing.Size(502, 222);
             this.pnlSifreIslemleri.TabIndex = 3;
             // 
             // label7
@@ -254,17 +271,19 @@
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Top;
             this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
+            this.label7.Size = new System.Drawing.Size(92, 17);
             this.label7.TabIndex = 18;
             this.label7.Text = "Şifre İşlemleri";
             this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnSifreUygunMu
             // 
-            this.btnSifreUygunMu.Location = new System.Drawing.Point(173, 71);
+            this.btnSifreUygunMu.Location = new System.Drawing.Point(231, 87);
+            this.btnSifreUygunMu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSifreUygunMu.Name = "btnSifreUygunMu";
-            this.btnSifreUygunMu.Size = new System.Drawing.Size(145, 23);
+            this.btnSifreUygunMu.Size = new System.Drawing.Size(193, 28);
             this.btnSifreUygunMu.TabIndex = 17;
             this.btnSifreUygunMu.Text = "Şifre Uygun Mu?";
             this.btnSifreUygunMu.UseVisualStyleBackColor = true;
@@ -272,9 +291,10 @@
             // 
             // btnRastgeleSifreUret
             // 
-            this.btnRastgeleSifreUret.Location = new System.Drawing.Point(21, 71);
+            this.btnRastgeleSifreUret.Location = new System.Drawing.Point(28, 87);
+            this.btnRastgeleSifreUret.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRastgeleSifreUret.Name = "btnRastgeleSifreUret";
-            this.btnRastgeleSifreUret.Size = new System.Drawing.Size(145, 23);
+            this.btnRastgeleSifreUret.Size = new System.Drawing.Size(193, 28);
             this.btnRastgeleSifreUret.TabIndex = 16;
             this.btnRastgeleSifreUret.Text = "Rastgele Şifre Üret";
             this.btnRastgeleSifreUret.UseVisualStyleBackColor = true;
@@ -282,9 +302,10 @@
             // 
             // btnSha512Hash
             // 
-            this.btnSha512Hash.Location = new System.Drawing.Point(243, 42);
+            this.btnSha512Hash.Location = new System.Drawing.Point(324, 52);
+            this.btnSha512Hash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSha512Hash.Name = "btnSha512Hash";
-            this.btnSha512Hash.Size = new System.Drawing.Size(75, 23);
+            this.btnSha512Hash.Size = new System.Drawing.Size(100, 28);
             this.btnSha512Hash.TabIndex = 15;
             this.btnSha512Hash.Text = "SHA 512";
             this.btnSha512Hash.UseVisualStyleBackColor = true;
@@ -292,9 +313,10 @@
             // 
             // btnSha256Hash
             // 
-            this.btnSha256Hash.Location = new System.Drawing.Point(131, 42);
+            this.btnSha256Hash.Location = new System.Drawing.Point(175, 52);
+            this.btnSha256Hash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSha256Hash.Name = "btnSha256Hash";
-            this.btnSha256Hash.Size = new System.Drawing.Size(75, 23);
+            this.btnSha256Hash.Size = new System.Drawing.Size(100, 28);
             this.btnSha256Hash.TabIndex = 14;
             this.btnSha256Hash.Text = "SHA 256";
             this.btnSha256Hash.UseVisualStyleBackColor = true;
@@ -303,9 +325,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(21, 100);
+            this.label6.Location = new System.Drawing.Point(28, 123);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(48, 17);
             this.label6.TabIndex = 13;
             this.label6.Text = "Sonuç";
             // 
@@ -313,16 +336,19 @@
             // 
             this.lbSifreSonuc.FormattingEnabled = true;
             this.lbSifreSonuc.HorizontalScrollbar = true;
-            this.lbSifreSonuc.Location = new System.Drawing.Point(65, 100);
+            this.lbSifreSonuc.ItemHeight = 16;
+            this.lbSifreSonuc.Location = new System.Drawing.Point(87, 123);
+            this.lbSifreSonuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbSifreSonuc.Name = "lbSifreSonuc";
-            this.lbSifreSonuc.Size = new System.Drawing.Size(251, 69);
+            this.lbSifreSonuc.Size = new System.Drawing.Size(333, 84);
             this.lbSifreSonuc.TabIndex = 12;
             // 
             // btnMd5Hash
             // 
-            this.btnMd5Hash.Location = new System.Drawing.Point(21, 42);
+            this.btnMd5Hash.Location = new System.Drawing.Point(28, 52);
+            this.btnMd5Hash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMd5Hash.Name = "btnMd5Hash";
-            this.btnMd5Hash.Size = new System.Drawing.Size(75, 23);
+            this.btnMd5Hash.Size = new System.Drawing.Size(100, 28);
             this.btnMd5Hash.TabIndex = 11;
             this.btnMd5Hash.Text = "MD5";
             this.btnMd5Hash.UseVisualStyleBackColor = true;
@@ -330,17 +356,19 @@
             // 
             // txtSifrelenecekMetin
             // 
-            this.txtSifrelenecekMetin.Location = new System.Drawing.Point(118, 16);
+            this.txtSifrelenecekMetin.Location = new System.Drawing.Point(157, 20);
+            this.txtSifrelenecekMetin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSifrelenecekMetin.Name = "txtSifrelenecekMetin";
-            this.txtSifrelenecekMetin.Size = new System.Drawing.Size(199, 20);
+            this.txtSifrelenecekMetin.Size = new System.Drawing.Size(264, 22);
             this.txtSifrelenecekMetin.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 19);
+            this.label5.Location = new System.Drawing.Point(23, 23);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 13);
+            this.label5.Size = new System.Drawing.Size(124, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "Şifrelenecek Metin";
             // 
@@ -355,9 +383,10 @@
             this.pnlSayiIslemleri.Controls.Add(this.btnSayisalMi);
             this.pnlSayiIslemleri.Controls.Add(this.txtSayi);
             this.pnlSayiIslemleri.Controls.Add(this.label11);
-            this.pnlSayiIslemleri.Location = new System.Drawing.Point(15, 257);
+            this.pnlSayiIslemleri.Location = new System.Drawing.Point(20, 316);
+            this.pnlSayiIslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSayiIslemleri.Name = "pnlSayiIslemleri";
-            this.pnlSayiIslemleri.Size = new System.Drawing.Size(377, 181);
+            this.pnlSayiIslemleri.Size = new System.Drawing.Size(502, 222);
             this.pnlSayiIslemleri.TabIndex = 19;
             // 
             // label9
@@ -365,17 +394,19 @@
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Top;
             this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 13);
+            this.label9.Size = new System.Drawing.Size(90, 17);
             this.label9.TabIndex = 18;
             this.label9.Text = "Sayı İşlemleri";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnOnayKoduOlustur
             // 
-            this.btnOnayKoduOlustur.Location = new System.Drawing.Point(243, 42);
+            this.btnOnayKoduOlustur.Location = new System.Drawing.Point(324, 52);
+            this.btnOnayKoduOlustur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOnayKoduOlustur.Name = "btnOnayKoduOlustur";
-            this.btnOnayKoduOlustur.Size = new System.Drawing.Size(75, 23);
+            this.btnOnayKoduOlustur.Size = new System.Drawing.Size(100, 28);
             this.btnOnayKoduOlustur.TabIndex = 15;
             this.btnOnayKoduOlustur.Text = "Onay Kodu";
             this.btnOnayKoduOlustur.UseVisualStyleBackColor = true;
@@ -383,9 +414,10 @@
             // 
             // btnMetneDonustur
             // 
-            this.btnMetneDonustur.Location = new System.Drawing.Point(102, 42);
+            this.btnMetneDonustur.Location = new System.Drawing.Point(136, 52);
+            this.btnMetneDonustur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMetneDonustur.Name = "btnMetneDonustur";
-            this.btnMetneDonustur.Size = new System.Drawing.Size(135, 23);
+            this.btnMetneDonustur.Size = new System.Drawing.Size(180, 28);
             this.btnMetneDonustur.TabIndex = 14;
             this.btnMetneDonustur.Text = "Para Metnine Dönüştür";
             this.btnMetneDonustur.UseVisualStyleBackColor = true;
@@ -394,9 +426,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(18, 78);
+            this.label10.Location = new System.Drawing.Point(24, 96);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.Size = new System.Drawing.Size(48, 17);
             this.label10.TabIndex = 13;
             this.label10.Text = "Sonuç";
             // 
@@ -404,16 +437,19 @@
             // 
             this.lbSayiSonuc.FormattingEnabled = true;
             this.lbSayiSonuc.HorizontalScrollbar = true;
-            this.lbSayiSonuc.Location = new System.Drawing.Point(62, 78);
+            this.lbSayiSonuc.ItemHeight = 16;
+            this.lbSayiSonuc.Location = new System.Drawing.Point(83, 96);
+            this.lbSayiSonuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbSayiSonuc.Name = "lbSayiSonuc";
-            this.lbSayiSonuc.Size = new System.Drawing.Size(254, 82);
+            this.lbSayiSonuc.Size = new System.Drawing.Size(337, 100);
             this.lbSayiSonuc.TabIndex = 12;
             // 
             // btnSayisalMi
             // 
-            this.btnSayisalMi.Location = new System.Drawing.Point(21, 42);
+            this.btnSayisalMi.Location = new System.Drawing.Point(28, 52);
+            this.btnSayisalMi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSayisalMi.Name = "btnSayisalMi";
-            this.btnSayisalMi.Size = new System.Drawing.Size(75, 23);
+            this.btnSayisalMi.Size = new System.Drawing.Size(100, 28);
             this.btnSayisalMi.TabIndex = 11;
             this.btnSayisalMi.Text = "Sayısal Mı?";
             this.btnSayisalMi.UseVisualStyleBackColor = true;
@@ -421,17 +457,19 @@
             // 
             // txtSayi
             // 
-            this.txtSayi.Location = new System.Drawing.Point(118, 16);
+            this.txtSayi.Location = new System.Drawing.Point(157, 20);
+            this.txtSayi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSayi.Name = "txtSayi";
-            this.txtSayi.Size = new System.Drawing.Size(199, 20);
+            this.txtSayi.Size = new System.Drawing.Size(264, 22);
             this.txtSayi.TabIndex = 4;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 19);
+            this.label11.Location = new System.Drawing.Point(23, 23);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(95, 13);
+            this.label11.Size = new System.Drawing.Size(124, 17);
             this.label11.TabIndex = 3;
             this.label11.Text = "Şifrelenecek Metin";
             // 
@@ -446,9 +484,10 @@
             this.pnlKisiIslemleri.Controls.Add(this.btnTcKimlikDogrula);
             this.pnlKisiIslemleri.Controls.Add(this.txtKisiMetni);
             this.pnlKisiIslemleri.Controls.Add(this.label14);
-            this.pnlKisiIslemleri.Location = new System.Drawing.Point(411, 257);
+            this.pnlKisiIslemleri.Location = new System.Drawing.Point(548, 316);
+            this.pnlKisiIslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlKisiIslemleri.Name = "pnlKisiIslemleri";
-            this.pnlKisiIslemleri.Size = new System.Drawing.Size(377, 181);
+            this.pnlKisiIslemleri.Size = new System.Drawing.Size(502, 222);
             this.pnlKisiIslemleri.TabIndex = 20;
             // 
             // label12
@@ -456,17 +495,19 @@
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Top;
             this.label12.Location = new System.Drawing.Point(0, 0);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(63, 13);
+            this.label12.Size = new System.Drawing.Size(85, 17);
             this.label12.TabIndex = 18;
             this.label12.Text = "Kişi İşlemleri";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnEPostaDogrula
             // 
-            this.btnEPostaDogrula.Location = new System.Drawing.Point(223, 42);
+            this.btnEPostaDogrula.Location = new System.Drawing.Point(297, 52);
+            this.btnEPostaDogrula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEPostaDogrula.Name = "btnEPostaDogrula";
-            this.btnEPostaDogrula.Size = new System.Drawing.Size(95, 23);
+            this.btnEPostaDogrula.Size = new System.Drawing.Size(127, 28);
             this.btnEPostaDogrula.TabIndex = 15;
             this.btnEPostaDogrula.Text = "E-Posta Doğrula";
             this.btnEPostaDogrula.UseVisualStyleBackColor = true;
@@ -474,9 +515,10 @@
             // 
             // btnIbanDogrula
             // 
-            this.btnIbanDogrula.Location = new System.Drawing.Point(131, 42);
+            this.btnIbanDogrula.Location = new System.Drawing.Point(175, 52);
+            this.btnIbanDogrula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIbanDogrula.Name = "btnIbanDogrula";
-            this.btnIbanDogrula.Size = new System.Drawing.Size(86, 23);
+            this.btnIbanDogrula.Size = new System.Drawing.Size(115, 28);
             this.btnIbanDogrula.TabIndex = 14;
             this.btnIbanDogrula.Text = "IBAN Doğrula";
             this.btnIbanDogrula.UseVisualStyleBackColor = true;
@@ -485,9 +527,10 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(18, 78);
+            this.label13.Location = new System.Drawing.Point(24, 96);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(38, 13);
+            this.label13.Size = new System.Drawing.Size(48, 17);
             this.label13.TabIndex = 13;
             this.label13.Text = "Sonuç";
             // 
@@ -495,16 +538,19 @@
             // 
             this.lbKisiSonuc.FormattingEnabled = true;
             this.lbKisiSonuc.HorizontalScrollbar = true;
-            this.lbKisiSonuc.Location = new System.Drawing.Point(62, 78);
+            this.lbKisiSonuc.ItemHeight = 16;
+            this.lbKisiSonuc.Location = new System.Drawing.Point(83, 96);
+            this.lbKisiSonuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbKisiSonuc.Name = "lbKisiSonuc";
-            this.lbKisiSonuc.Size = new System.Drawing.Size(254, 82);
+            this.lbKisiSonuc.Size = new System.Drawing.Size(337, 100);
             this.lbKisiSonuc.TabIndex = 12;
             // 
             // btnTcKimlikDogrula
             // 
-            this.btnTcKimlikDogrula.Location = new System.Drawing.Point(21, 42);
+            this.btnTcKimlikDogrula.Location = new System.Drawing.Point(28, 52);
+            this.btnTcKimlikDogrula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTcKimlikDogrula.Name = "btnTcKimlikDogrula";
-            this.btnTcKimlikDogrula.Size = new System.Drawing.Size(104, 23);
+            this.btnTcKimlikDogrula.Size = new System.Drawing.Size(139, 28);
             this.btnTcKimlikDogrula.TabIndex = 11;
             this.btnTcKimlikDogrula.Text = "TC Kimlik Doğrula";
             this.btnTcKimlikDogrula.UseVisualStyleBackColor = true;
@@ -512,23 +558,26 @@
             // 
             // txtKisiMetni
             // 
-            this.txtKisiMetni.Location = new System.Drawing.Point(118, 16);
+            this.txtKisiMetni.Location = new System.Drawing.Point(157, 20);
+            this.txtKisiMetni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKisiMetni.Name = "txtKisiMetni";
-            this.txtKisiMetni.Size = new System.Drawing.Size(199, 20);
+            this.txtKisiMetni.Size = new System.Drawing.Size(264, 22);
             this.txtKisiMetni.TabIndex = 4;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 19);
+            this.label14.Location = new System.Drawing.Point(23, 23);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(33, 13);
+            this.label14.Size = new System.Drawing.Size(42, 17);
             this.label14.TabIndex = 3;
             this.label14.Text = "Metin";
             // 
             // pnlMetinIslemleri
             // 
             this.pnlMetinIslemleri.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlMetinIslemleri.Controls.Add(this.btnEPostaKontrol);
             this.pnlMetinIslemleri.Controls.Add(this.btnTelefonNoDuzenle);
             this.pnlMetinIslemleri.Controls.Add(this.btnMetinSifrele);
             this.pnlMetinIslemleri.Controls.Add(this.label15);
@@ -539,16 +588,18 @@
             this.pnlMetinIslemleri.Controls.Add(this.btnIlkHarfleriBuyukYap);
             this.pnlMetinIslemleri.Controls.Add(this.txtMetin);
             this.pnlMetinIslemleri.Controls.Add(this.label17);
-            this.pnlMetinIslemleri.Location = new System.Drawing.Point(15, 458);
+            this.pnlMetinIslemleri.Location = new System.Drawing.Point(20, 564);
+            this.pnlMetinIslemleri.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMetinIslemleri.Name = "pnlMetinIslemleri";
-            this.pnlMetinIslemleri.Size = new System.Drawing.Size(773, 181);
+            this.pnlMetinIslemleri.Size = new System.Drawing.Size(1030, 222);
             this.pnlMetinIslemleri.TabIndex = 21;
             // 
             // btnTelefonNoDuzenle
             // 
-            this.btnTelefonNoDuzenle.Location = new System.Drawing.Point(503, 42);
+            this.btnTelefonNoDuzenle.Location = new System.Drawing.Point(671, 52);
+            this.btnTelefonNoDuzenle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTelefonNoDuzenle.Name = "btnTelefonNoDuzenle";
-            this.btnTelefonNoDuzenle.Size = new System.Drawing.Size(134, 23);
+            this.btnTelefonNoDuzenle.Size = new System.Drawing.Size(179, 28);
             this.btnTelefonNoDuzenle.TabIndex = 20;
             this.btnTelefonNoDuzenle.Text = "Telefon No Düzenle";
             this.btnTelefonNoDuzenle.UseVisualStyleBackColor = true;
@@ -556,9 +607,10 @@
             // 
             // btnMetinSifrele
             // 
-            this.btnMetinSifrele.Location = new System.Drawing.Point(363, 42);
+            this.btnMetinSifrele.Location = new System.Drawing.Point(484, 52);
+            this.btnMetinSifrele.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMetinSifrele.Name = "btnMetinSifrele";
-            this.btnMetinSifrele.Size = new System.Drawing.Size(134, 23);
+            this.btnMetinSifrele.Size = new System.Drawing.Size(179, 28);
             this.btnMetinSifrele.TabIndex = 19;
             this.btnMetinSifrele.Text = "Metin Şifrele";
             this.btnMetinSifrele.UseVisualStyleBackColor = true;
@@ -569,17 +621,19 @@
             this.label15.AutoSize = true;
             this.label15.Dock = System.Windows.Forms.DockStyle.Top;
             this.label15.Location = new System.Drawing.Point(0, 0);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 13);
+            this.label15.Size = new System.Drawing.Size(97, 17);
             this.label15.TabIndex = 18;
             this.label15.Text = "Metin İşlemleri";
             this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnTurkceKarakterDuzelt
             // 
-            this.btnTurkceKarakterDuzelt.Location = new System.Drawing.Point(223, 42);
+            this.btnTurkceKarakterDuzelt.Location = new System.Drawing.Point(297, 52);
+            this.btnTurkceKarakterDuzelt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnTurkceKarakterDuzelt.Name = "btnTurkceKarakterDuzelt";
-            this.btnTurkceKarakterDuzelt.Size = new System.Drawing.Size(134, 23);
+            this.btnTurkceKarakterDuzelt.Size = new System.Drawing.Size(179, 28);
             this.btnTurkceKarakterDuzelt.TabIndex = 15;
             this.btnTurkceKarakterDuzelt.Text = "Türkçe Karakter Düzelt";
             this.btnTurkceKarakterDuzelt.UseVisualStyleBackColor = true;
@@ -587,9 +641,10 @@
             // 
             // btnIlkHarfiBuyukYap
             // 
-            this.btnIlkHarfiBuyukYap.Location = new System.Drawing.Point(131, 42);
+            this.btnIlkHarfiBuyukYap.Location = new System.Drawing.Point(175, 52);
+            this.btnIlkHarfiBuyukYap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIlkHarfiBuyukYap.Name = "btnIlkHarfiBuyukYap";
-            this.btnIlkHarfiBuyukYap.Size = new System.Drawing.Size(86, 23);
+            this.btnIlkHarfiBuyukYap.Size = new System.Drawing.Size(115, 28);
             this.btnIlkHarfiBuyukYap.TabIndex = 14;
             this.btnIlkHarfiBuyukYap.Text = "İlk Harf Büyük";
             this.btnIlkHarfiBuyukYap.UseVisualStyleBackColor = true;
@@ -598,9 +653,10 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(18, 78);
+            this.label16.Location = new System.Drawing.Point(24, 96);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(38, 13);
+            this.label16.Size = new System.Drawing.Size(48, 17);
             this.label16.TabIndex = 13;
             this.label16.Text = "Sonuç";
             // 
@@ -608,16 +664,19 @@
             // 
             this.lbMetinSonuc.FormattingEnabled = true;
             this.lbMetinSonuc.HorizontalScrollbar = true;
-            this.lbMetinSonuc.Location = new System.Drawing.Point(62, 78);
+            this.lbMetinSonuc.ItemHeight = 16;
+            this.lbMetinSonuc.Location = new System.Drawing.Point(83, 96);
+            this.lbMetinSonuc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lbMetinSonuc.Name = "lbMetinSonuc";
-            this.lbMetinSonuc.Size = new System.Drawing.Size(652, 82);
+            this.lbMetinSonuc.Size = new System.Drawing.Size(868, 100);
             this.lbMetinSonuc.TabIndex = 12;
             // 
             // btnIlkHarfleriBuyukYap
             // 
-            this.btnIlkHarfleriBuyukYap.Location = new System.Drawing.Point(21, 42);
+            this.btnIlkHarfleriBuyukYap.Location = new System.Drawing.Point(28, 52);
+            this.btnIlkHarfleriBuyukYap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnIlkHarfleriBuyukYap.Name = "btnIlkHarfleriBuyukYap";
-            this.btnIlkHarfleriBuyukYap.Size = new System.Drawing.Size(104, 23);
+            this.btnIlkHarfleriBuyukYap.Size = new System.Drawing.Size(139, 28);
             this.btnIlkHarfleriBuyukYap.TabIndex = 11;
             this.btnIlkHarfleriBuyukYap.Text = "İlk Harfler Büyük";
             this.btnIlkHarfleriBuyukYap.UseVisualStyleBackColor = true;
@@ -625,26 +684,39 @@
             // 
             // txtMetin
             // 
-            this.txtMetin.Location = new System.Drawing.Point(119, 12);
+            this.txtMetin.Location = new System.Drawing.Point(159, 15);
+            this.txtMetin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMetin.Name = "txtMetin";
-            this.txtMetin.Size = new System.Drawing.Size(595, 20);
+            this.txtMetin.Size = new System.Drawing.Size(792, 22);
             this.txtMetin.TabIndex = 4;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(17, 19);
+            this.label17.Location = new System.Drawing.Point(23, 23);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(33, 13);
+            this.label17.Size = new System.Drawing.Size(42, 17);
             this.label17.TabIndex = 3;
             this.label17.Text = "Metin";
             // 
+            // btnEPostaKontrol
+            // 
+            this.btnEPostaKontrol.Location = new System.Drawing.Point(858, 52);
+            this.btnEPostaKontrol.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEPostaKontrol.Name = "btnEPostaKontrol";
+            this.btnEPostaKontrol.Size = new System.Drawing.Size(160, 28);
+            this.btnEPostaKontrol.TabIndex = 21;
+            this.btnEPostaKontrol.Text = "E-Posta Geçerli Mi?";
+            this.btnEPostaKontrol.UseVisualStyleBackColor = true;
+            this.btnEPostaKontrol.Click += new System.EventHandler(this.btnEPostaKontrol_Click);
+            // 
             // FrmAnaSayfa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(800, 686);
+            this.ClientSize = new System.Drawing.Size(1067, 844);
             this.Controls.Add(this.pnlMetinIslemleri);
             this.Controls.Add(this.pnlKisiIslemleri);
             this.Controls.Add(this.pnlSayiIslemleri);
@@ -652,6 +724,7 @@
             this.Controls.Add(this.pnlTarihIslemleri);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbIslemTuru);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAnaSayfa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "İşlemler Ekranı";
@@ -669,6 +742,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btnEPostaKontrol;
 
         #endregion
 

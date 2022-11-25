@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -194,6 +195,25 @@ namespace CSharpHelperMethodsLibrary
             metin = metin.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
             return metin;
 
+        }
+        
+        /// <summary>
+        /// Girilen mail adresinin geçerli olup olmadığını kontrol eden bir metottur
+        /// </summary>
+        /// <param name="email">E-Posta Adresi</param>
+        /// <returns>Geçerli veya Değil Bilgisi</returns>
+        public static bool MailAdresiGecerliMi(string email)
+        {
+            var gecerliMi = true;
+            try
+            {
+                var emailAddress = new MailAddress(email);
+            }
+            catch
+            {
+                gecerliMi = false;
+            }
+            return gecerliMi;
         }
     }
 }
