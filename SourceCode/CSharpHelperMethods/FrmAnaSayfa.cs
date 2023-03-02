@@ -66,65 +66,57 @@ namespace CSharpHelperMethods
                 // Metin İşlemleri
                 case 0:
                     {
-                        pnlMetinIslemleri.Enabled = true;
-                        pnlTarihIslemleri.Enabled = false;
-                        pnlSifreIslemleri.Enabled = false;
-                        pnlSayiIslemleri.Enabled = false;
-                        pnlKisiIslemleri.Enabled = false;
+                        EkraniDuzenle("pnlMetinIslemleri");
                         break;
                     }
                 // Tarih İşlemleri
                 case 1:
                     {
-                        pnlMetinIslemleri.Enabled = false;
-                        pnlTarihIslemleri.Enabled = true;
-                        pnlSifreIslemleri.Enabled = false;
-                        pnlSayiIslemleri.Enabled = false;
-                        pnlKisiIslemleri.Enabled = false;
+                        EkraniDuzenle("pnlTarihIslemleri");
                         break;
                     }
                 // Sayı İşlemleri
                 case 2:
                     {
-                        pnlMetinIslemleri.Enabled = false;
-                        pnlTarihIslemleri.Enabled = false;
-                        pnlSifreIslemleri.Enabled = false;
-                        pnlSayiIslemleri.Enabled = true;
-                        pnlKisiIslemleri.Enabled = false;
+                        EkraniDuzenle("pnlSayiIslemleri");
                         break;
                     }
                 // Şifre İşlemleri
                 case 3:
                     {
-                        pnlMetinIslemleri.Enabled = false;
-                        pnlTarihIslemleri.Enabled = false;
-                        pnlSifreIslemleri.Enabled = true;
-                        pnlSayiIslemleri.Enabled = false;
-                        pnlKisiIslemleri.Enabled = false;
+                        EkraniDuzenle("pnlSifreIslemleri");
                         break;
                     }
                 // Kişi İşlemleri
                 case 4:
                     {
-                        pnlMetinIslemleri.Enabled = false;
-                        pnlTarihIslemleri.Enabled = false;
-                        pnlSifreIslemleri.Enabled = false;
-                        pnlSayiIslemleri.Enabled = false;
-                        pnlKisiIslemleri.Enabled = true;
+                        EkraniDuzenle("pnlKisiIslemleri");
                         break;
                     }
                 // Bunlar haricinde herhangi bir şey
                 default:
                     {
-                        pnlMetinIslemleri.Enabled = false;
-                        pnlTarihIslemleri.Enabled = false;
-                        pnlSifreIslemleri.Enabled = false;
-                        pnlSayiIslemleri.Enabled = false;
-                        pnlKisiIslemleri.Enabled = false;
+                        EkraniDuzenle("Hicbiri");
                         break;
                     }
             }
             #endregion
+        }
+
+        /// <summary>
+        /// Parametre olarak verilen panelin aktif hale getirilmesi
+        /// Diğer panellerin deaktif edilmesi için hazırlanmış metottur
+        /// </summary>
+        /// <param name="panelAdi">Panel Adı Bilgisi</param>
+        private void EkraniDuzenle(string panelAdi)
+        {
+            foreach (Control c in this.Controls)
+            {
+                if (c.Name == panelAdi)
+                    c.Enabled = true;
+                else if (c.Name.StartsWith("pnl"))
+                    c.Enabled = false;
+            }
         }
         
         /// <summary>

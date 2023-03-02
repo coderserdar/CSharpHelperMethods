@@ -154,17 +154,35 @@ namespace CSharpHelperMethodsLibrary
         /// <returns>Metnin Kelimelerinin İlk Harflerinin Büyültülmüş Hali</returns>
         public static string MetinIlkKarakterleriBuyukYap(this string input)
         {
-            var result = "";
+            var metinDuzenleyici = new StringBuilder();
             var wordList = input.Split(' ');
             var cultureInfo = new CultureInfo("tr-TR");
             foreach (var item in wordList)
             {
                 if (item.Length > 1)
-                    result = result + "" + item.Substring(0, 1).ToUpper(cultureInfo) + item.Substring(1).ToLower(cultureInfo) + " ";
+                {
+                    metinDuzenleyici.Append(item.Substring(0, 1).ToUpper(cultureInfo));
+                    metinDuzenleyici.Append(item.Substring(1).ToLower(cultureInfo));
+                    metinDuzenleyici.Append(" ");
+                }
                 else if (item.Length == 1)
-                    result = result + "" + item.ToUpper(cultureInfo) + " ";
+                {
+                    metinDuzenleyici.Append(item.ToUpper(cultureInfo));
+                    metinDuzenleyici.Append(" ");
+                }
             }
-            return result;
+            return metinDuzenleyici.ToString();
+        }
+
+        /// <summary>
+        /// Telefon No, E-Posta Adresi vb. metinsel veriler içerisindeki
+        /// Boşluk, parantez, kısa çizgi gibi verilerin silinmesi için hazırlanmış metottur
+        /// </summary>
+        /// <param name="metin">Girdi Metin Bilgisi</param>
+        /// <returns>Çıktı Metin Bilgisi</returns>
+        private static string GereksizKarakterTemizle(string metin)
+        {
+            return metin.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
         }
 
         /// <summary>
@@ -175,7 +193,7 @@ namespace CSharpHelperMethodsLibrary
         public static string TelefonNoDuzenle(string telefonNo)
         {
             if (string.IsNullOrEmpty(telefonNo)) return string.Empty;
-            telefonNo = telefonNo.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
+            telefonNo = GereksizKarakterTemizle(telefonNo);
             if (telefonNo.Length == 11)
             {
                 telefonNo = telefonNo.Substring(telefonNo.Length - 10);
@@ -192,9 +210,8 @@ namespace CSharpHelperMethodsLibrary
         public static string BoslukKaldir(string metin)
         {
             if (string.IsNullOrEmpty(metin)) return string.Empty;
-            metin = metin.Replace("-", "").Replace(" ", "").Replace("(", "").Replace(")", "");
+            metin = GereksizKarakterTemizle(metin);
             return metin;
-
         }
         
         /// <summary>
