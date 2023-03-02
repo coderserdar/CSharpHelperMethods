@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using CSharpHelperMethodsLibrary;
 using System.Text;
 using System.Windows.Forms;
@@ -24,30 +26,8 @@ namespace CSharpHelperMethods
         private void FrmAnaSayfa_Load(object sender, EventArgs e)
         {
             cmbIslemTuru.DropDownStyle = ComboBoxStyle.DropDownList;
-            #region Sayfa İlk Yüklendiğinde Tüm Panellerin Erişime Kapanması
-            pnlTarihIslemleri.Enabled = false;
-            pnlSifreIslemleri.Enabled = false;
-            pnlSayiIslemleri.Enabled = false;
-            pnlKisiIslemleri.Enabled = false;
-            pnlMetinIslemleri.Enabled = false;
-            #endregion
-            #region Bütün Listboxların MultiLine Yapılması
-            lbMetinSonuc.DrawMode = DrawMode.OwnerDrawVariable;
-            lbMetinSonuc.MeasureItem += listBox_MeasureItem;
-            lbMetinSonuc.DrawItem += listBox_DrawItem;
-            lbSayiSonuc.DrawMode = DrawMode.OwnerDrawVariable;
-            lbSayiSonuc.MeasureItem += listBox_MeasureItem;
-            lbSayiSonuc.DrawItem += listBox_DrawItem;
-            lbKisiSonuc.DrawMode = DrawMode.OwnerDrawVariable;
-            lbKisiSonuc.MeasureItem += listBox_MeasureItem;
-            lbKisiSonuc.DrawItem += listBox_DrawItem;
-            lbSifreSonuc.DrawMode = DrawMode.OwnerDrawVariable;
-            lbSifreSonuc.MeasureItem += listBox_MeasureItem;
-            lbSifreSonuc.DrawItem += listBox_DrawItem;
-            lbSonuc.DrawMode = DrawMode.OwnerDrawVariable;
-            lbSonuc.MeasureItem += listBox_MeasureItem;
-            lbSonuc.DrawItem += listBox_DrawItem;
-            #endregion
+            PaneliErisilebilirKil("Hicbiri");
+            ListBoxlariCokluSatirliYap();
         }
 
         /// <summary>
@@ -66,37 +46,37 @@ namespace CSharpHelperMethods
                 // Metin İşlemleri
                 case 0:
                     {
-                        PaneliGorunurKil("pnlMetinIslemleri");
+                        PaneliErisilebilirKil("pnlMetinIslemleri");
                         break;
                     }
                 // Tarih İşlemleri
                 case 1:
                     {
-                        PaneliGorunurKil("pnlTarihIslemleri");
+                        PaneliErisilebilirKil("pnlTarihIslemleri");
                         break;
                     }
                 // Sayı İşlemleri
                 case 2:
                     {
-                        PaneliGorunurKil("pnlSayiIslemleri");
+                        PaneliErisilebilirKil("pnlSayiIslemleri");
                         break;
                     }
                 // Şifre İşlemleri
                 case 3:
                     {
-                        PaneliGorunurKil("pnlSifreIslemleri");
+                        PaneliErisilebilirKil("pnlSifreIslemleri");
                         break;
                     }
                 // Kişi İşlemleri
                 case 4:
                     {
-                        PaneliGorunurKil("pnlKisiIslemleri");
+                        PaneliErisilebilirKil("pnlKisiIslemleri");
                         break;
                     }
                 // Bunlar haricinde herhangi bir şey
                 default:
                     {
-                        PaneliGorunurKil("Hicbiri");
+                        PaneliErisilebilirKil("Hicbiri");
                         break;
                     }
             }
@@ -108,14 +88,34 @@ namespace CSharpHelperMethods
         /// Diğer panellerin deaktif edilmesi için hazırlanmış metottur
         /// </summary>
         /// <param name="panelAdi">Panel Adı Bilgisi</param>
-        private void PaneliGorunurKil(string panelAdi)
+        private void PaneliErisilebilirKil(string panelAdi)
         {
-            foreach (Control c in Controls)
+            foreach (Control formElement in Controls)
             {
-                if (c.Name == panelAdi)
-                    c.Enabled = true;
-                else if (c.Name.StartsWith("pnl"))
-                    c.Enabled = false;
+                if (formElement.Name == panelAdi)
+                    formElement.Enabled = true;
+                else if (formElement.Name.StartsWith("pnl"))
+                    formElement.Enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Tüm Panelleri gezerek panellerin içerisindeki listboxların
+        /// Multiline özelliğine kavuşması için
+        /// Gerekli işlemlerin düzenlendiği metottur.
+        /// </summary>
+        private void ListBoxlariCokluSatirliYap()
+        {
+            foreach (Control formElement in Controls)
+            {
+                if (formElement.GetType() != typeof(Panel)) continue;
+                var listBoxList = formElement.Controls.OfType<ListBox>().ToList();
+                foreach (var listBox in listBoxList)
+                {
+                    listBox.DrawMode = DrawMode.OwnerDrawVariable;
+                    listBox.MeasureItem += listBox_MeasureItem;
+                    listBox.DrawItem += listBox_DrawItem;
+                }
             }
         }
         
