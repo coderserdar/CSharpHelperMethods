@@ -66,37 +66,37 @@ namespace CSharpHelperMethods
                 // Metin İşlemleri
                 case 0:
                     {
-                        EkraniDuzenle("pnlMetinIslemleri");
+                        PaneliGorunurKil("pnlMetinIslemleri");
                         break;
                     }
                 // Tarih İşlemleri
                 case 1:
                     {
-                        EkraniDuzenle("pnlTarihIslemleri");
+                        PaneliGorunurKil("pnlTarihIslemleri");
                         break;
                     }
                 // Sayı İşlemleri
                 case 2:
                     {
-                        EkraniDuzenle("pnlSayiIslemleri");
+                        PaneliGorunurKil("pnlSayiIslemleri");
                         break;
                     }
                 // Şifre İşlemleri
                 case 3:
                     {
-                        EkraniDuzenle("pnlSifreIslemleri");
+                        PaneliGorunurKil("pnlSifreIslemleri");
                         break;
                     }
                 // Kişi İşlemleri
                 case 4:
                     {
-                        EkraniDuzenle("pnlKisiIslemleri");
+                        PaneliGorunurKil("pnlKisiIslemleri");
                         break;
                     }
                 // Bunlar haricinde herhangi bir şey
                 default:
                     {
-                        EkraniDuzenle("Hicbiri");
+                        PaneliGorunurKil("Hicbiri");
                         break;
                     }
             }
@@ -108,7 +108,7 @@ namespace CSharpHelperMethods
         /// Diğer panellerin deaktif edilmesi için hazırlanmış metottur
         /// </summary>
         /// <param name="panelAdi">Panel Adı Bilgisi</param>
-        private void EkraniDuzenle(string panelAdi)
+        private void PaneliGorunurKil(string panelAdi)
         {
             foreach (Control c in Controls)
             {
