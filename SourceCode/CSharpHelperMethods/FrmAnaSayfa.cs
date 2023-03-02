@@ -21,7 +21,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void FrmAnaSayfa_Load(object sender, System.EventArgs e)
+        private void FrmAnaSayfa_Load(object sender, EventArgs e)
         {
             cmbIslemTuru.DropDownStyle = ComboBoxStyle.DropDownList;
             #region Sayfa İlk Yüklendiğinde Tüm Panellerin Erişime Kapanması
@@ -58,7 +58,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void cmbIslemTuru_SelectedIndexChanged(object sender, System.EventArgs e)
+        private void cmbIslemTuru_SelectedIndexChanged(object sender, EventArgs e)
         {
             #region Combobox'tan Seçilen Değere Göre İlgili Paneli Aktif Hale Getirme
             switch (cmbIslemTuru.SelectedIndex)
@@ -110,7 +110,7 @@ namespace CSharpHelperMethods
         /// <param name="panelAdi">Panel Adı Bilgisi</param>
         private void EkraniDuzenle(string panelAdi)
         {
-            foreach (Control c in this.Controls)
+            foreach (Control c in Controls)
             {
                 if (c.Name == panelAdi)
                     c.Enabled = true;
@@ -157,7 +157,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnYasHesapla_Click(object sender, System.EventArgs e)
+        private void btnYasHesapla_Click(object sender, EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked)
                 MessageBox.Show(Sabitler.BaslangicTarihiGirilmedi);
@@ -180,7 +180,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnYasHesaplaMetinsel_Click(object sender, System.EventArgs e)
+        private void btnYasHesaplaMetinsel_Click(object sender, EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked)
                 MessageBox.Show(Sabitler.BaslangicTarihiGirilmedi);
@@ -200,7 +200,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnTarihAraligi_Click(object sender, System.EventArgs e)
+        private void btnTarihAraligi_Click(object sender, EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked || !dtpBitisTarihi.Checked)
                 MessageBox.Show(Sabitler.BaslangicVeyaBitisTarihiGirilmedi);
@@ -223,7 +223,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnAyFarki_Click(object sender, System.EventArgs e)
+        private void btnAyFarki_Click(object sender, EventArgs e)
         {
             if (!dtpBaslangicTarihi.Checked || !dtpBitisTarihi.Checked)
                 MessageBox.Show(Sabitler.BaslangicVeyaBitisTarihiGirilmedi);
@@ -248,7 +248,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnMd5Hash_Click(object sender, System.EventArgs e)
+        private void btnMd5Hash_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.SifrelenecekMetinGirilmedi);
@@ -269,7 +269,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnSha256Hash_Click(object sender, System.EventArgs e)
+        private void btnSha256Hash_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.SifrelenecekMetinGirilmedi);
@@ -290,7 +290,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnSha512Hash_Click(object sender, System.EventArgs e)
+        private void btnSha512Hash_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.SifrelenecekMetinGirilmedi);
@@ -309,7 +309,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnRastgeleSifreUret_Click(object sender, System.EventArgs e)
+        private void btnRastgeleSifreUret_Click(object sender, EventArgs e)
         {
             lbSifreSonuc.Items.Clear();
             var sb = new StringBuilder();
@@ -325,7 +325,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnSifreUygunMu_Click(object sender, System.EventArgs e)
+        private void btnSifreUygunMu_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSifrelenecekMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.SifreMetniGirilmedi);
@@ -347,7 +347,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnSayisalMi_Click(object sender, System.EventArgs e)
+        private void btnSayisalMi_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -367,7 +367,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnMetneDonustur_Click(object sender, System.EventArgs e)
+        private void btnMetneDonustur_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtSayi.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -390,7 +390,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnOnayKoduOlustur_Click(object sender, System.EventArgs e)
+        private void btnOnayKoduOlustur_Click(object sender, EventArgs e)
         {
             lbSayiSonuc.Items.Clear();
             var sb = new StringBuilder();
@@ -407,7 +407,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnTcKimlikDogrula_Click(object sender, System.EventArgs e)
+        private void btnTcKimlikDogrula_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -431,7 +431,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnIbanDogrula_Click(object sender, System.EventArgs e)
+        private void btnIbanDogrula_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -453,7 +453,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnEPostaDogrula_Click(object sender, System.EventArgs e)
+        private void btnEPostaDogrula_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtKisiMetni.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -475,7 +475,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnIlkHarfleriBuyukYap_Click(object sender, System.EventArgs e)
+        private void btnIlkHarfleriBuyukYap_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -495,7 +495,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnIlkHarfiBuyukYap_Click(object sender, System.EventArgs e)
+        private void btnIlkHarfiBuyukYap_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -515,7 +515,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnTurkceKarakterDuzelt_Click(object sender, System.EventArgs e)
+        private void btnTurkceKarakterDuzelt_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -536,7 +536,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnMetinSifrele_Click(object sender, System.EventArgs e)
+        private void btnMetinSifrele_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -560,7 +560,7 @@ namespace CSharpHelperMethods
         /// </summary>
         /// <param name="sender">The sender info (For example Main Form)</param>
         /// <param name="e">Event Arguments</param>
-        private void btnTelefonNoDuzenle_Click(object sender, System.EventArgs e)
+        private void btnTelefonNoDuzenle_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtMetin.Text.Trim()))
                 MessageBox.Show(Sabitler.MetinGirilmedi);
@@ -587,7 +587,6 @@ namespace CSharpHelperMethods
             else
             {
                 lbMetinSonuc.Items.Clear();
-                var sb = new StringBuilder();
                 var gecerliMi = MetinIslemleri.MailAdresiGecerliMi(txtMetin.Text.Trim());
                 lbMetinSonuc.Items.Add(txtMetin.Text.Trim());
                 lbMetinSonuc.Items.Add(gecerliMi ? Sabitler.EPostaAdresiGecerli : Sabitler.EPostaAdresiGecerliDegil);
