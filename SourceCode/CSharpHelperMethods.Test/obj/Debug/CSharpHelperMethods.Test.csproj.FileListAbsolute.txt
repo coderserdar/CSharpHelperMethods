@@ -1,0 +1,11 @@
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\obj\Debug\CSharpHelperMethods.Test.csproj.AssemblyReference.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\obj\Debug\CSharpHelperMethods.Test.csproj.CoreCompileInputs.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\bin\Debug\CSharpHelperMethods.Test.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\bin\Debug\CSharpHelperMethods.Test.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\bin\Debug\CSharpHelperMethods.Library.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\bin\Debug\nunit.framework.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\bin\Debug\CSharpHelperMethods.Library.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\bin\Debug\nunit.framework.xml
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\obj\Debug\CSharpHelperMethods.Test.csproj.CopyComplete
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\obj\Debug\CSharpHelperMethods.Test.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.Test\obj\Debug\CSharpHelperMethods.Test.pdb

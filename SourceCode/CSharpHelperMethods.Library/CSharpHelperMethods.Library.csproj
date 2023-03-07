@@ -7,7 +7,7 @@
         <ProjectGuid>{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}</ProjectGuid>
         <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>CSharpHelperMethodsLibrary</RootNamespace>
+        <RootNamespace>CSharpHelperMethods.Library</RootNamespace>
         <AssemblyName>CSharpHelperMethods.Library</AssemblyName>
         <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>

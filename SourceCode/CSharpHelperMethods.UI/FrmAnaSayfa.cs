@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using CSharpHelperMethodsLibrary;
+using CSharpHelperMethods.Library;
 using System.Text;
 using System.Windows.Forms;
 

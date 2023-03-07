@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethods.UI", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethods.Library", "CSharpHelperMethods.Library\CSharpHelperMethods.Library.csproj", "{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethods.Test", "CSharpHelperMethods.Test\CSharpHelperMethods.Test.csproj", "{0BEB820E-3502-4824-B589-832399CBC08D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BEB820E-3502-4824-B589-832399CBC08D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BEB820E-3502-4824-B589-832399CBC08D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BEB820E-3502-4824-B589-832399CBC08D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BEB820E-3502-4824-B589-832399CBC08D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

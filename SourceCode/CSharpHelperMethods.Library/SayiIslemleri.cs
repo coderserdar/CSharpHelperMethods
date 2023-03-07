@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 
-namespace CSharpHelperMethodsLibrary
+namespace CSharpHelperMethods.Library
 {
     /// <summary>
     /// Sayısal veri kontrol metotlarını barındıran sınıf

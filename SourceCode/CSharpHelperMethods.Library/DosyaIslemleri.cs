@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace CSharpHelperMethodsLibrary
+namespace CSharpHelperMethods.Library
 {
     /// <summary>
     /// Dosya işlemleri ile ilgili yardımıcı sınıf

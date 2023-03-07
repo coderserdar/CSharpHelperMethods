@@ -6,7 +6,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace CSharpHelperMethodsLibrary
+namespace CSharpHelperMethods.Library
 {
     /// <summary>
     /// Metinsel veri kontrol metotlarını barındıran sınıf
