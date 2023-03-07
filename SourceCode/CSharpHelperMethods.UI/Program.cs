@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CSharpHelperMethods
+namespace CSharpHelperMethods.UI
 {
     internal static class Program
     {

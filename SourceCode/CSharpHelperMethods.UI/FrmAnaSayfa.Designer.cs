@@ -1,4 +1,4 @@
-﻿namespace CSharpHelperMethods
+﻿namespace CSharpHelperMethods.UI
 {
     partial class FrmAnaSayfa
     {

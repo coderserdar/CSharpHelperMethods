@@ -6,7 +6,7 @@ using CSharpHelperMethods.Library;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CSharpHelperMethods
+namespace CSharpHelperMethods.UI
 {
     public partial class FrmAnaSayfa : Form
     {
