@@ -7,7 +7,7 @@
     <ProjectGuid>{BE02934F-770B-411C-AA8C-43B2EFA18625}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>CSharpHelperMethods</RootNamespace>
-    <AssemblyName>CSharpHelperMethods</AssemblyName>
+    <AssemblyName>CSharpHelperMethods.UI</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -75,9 +75,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CSharpHelperMethodsLibrary\CSharpHelperMethodsLibrary.csproj">
+    <ProjectReference Include="..\CSharpHelperMethods.Library\CSharpHelperMethods.Library.csproj">
       <Project>{06f5d9a1-3b03-4a3e-841e-39a3ae0aff66}</Project>
-      <Name>CSharpHelperMethodsLibrary</Name>
+      <Name>CSharpHelperMethods.Library</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

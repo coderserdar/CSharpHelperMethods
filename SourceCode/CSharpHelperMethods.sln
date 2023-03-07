@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.1684
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethods", "CSharpHelperMethods\CSharpHelperMethods.csproj", "{BE02934F-770B-411C-AA8C-43B2EFA18625}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethods.UI", "CSharpHelperMethods.UI\CSharpHelperMethods.UI.csproj", "{BE02934F-770B-411C-AA8C-43B2EFA18625}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethodsLibrary", "CSharpHelperMethodsLibrary\CSharpHelperMethodsLibrary.csproj", "{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpHelperMethods.Library", "CSharpHelperMethods.Library\CSharpHelperMethods.Library.csproj", "{06F5D9A1-3B03-4A3E-841E-39A3AE0AFF66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

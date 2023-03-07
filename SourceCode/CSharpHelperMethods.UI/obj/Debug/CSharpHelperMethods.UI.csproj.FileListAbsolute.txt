@@ -1,0 +1,12 @@
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\bin\Debug\CSharpHelperMethods.UI.exe
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\bin\Debug\CSharpHelperMethods.UI.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\bin\Debug\CSharpHelperMethods.Library.dll
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\bin\Debug\CSharpHelperMethods.Library.pdb
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.UI.csproj.AssemblyReference.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.FrmAnaSayfa.resources
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.Properties.Resources.resources
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.UI.csproj.GenerateResource.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.UI.csproj.CoreCompileInputs.cache
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.UI.csproj.CopyComplete
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.UI.exe
+C:\Users\serda\Documents\GitHub\CSharpHelperMethods\SourceCode\CSharpHelperMethods.UI\obj\Debug\CSharpHelperMethods.UI.pdb
