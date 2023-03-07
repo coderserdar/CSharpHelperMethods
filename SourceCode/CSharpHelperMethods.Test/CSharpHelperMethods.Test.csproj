@@ -44,8 +44,11 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="MetinIslemleriTest.cs" />
         <Compile Include="SayiIslemleriTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="SifrelemeIslemleriTest.cs" />
+        <Compile Include="TarihIslemleriTest.cs" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\CSharpHelperMethods.Library\CSharpHelperMethods.Library.csproj">
