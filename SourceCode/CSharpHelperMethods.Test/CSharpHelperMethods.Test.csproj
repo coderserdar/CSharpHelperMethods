@@ -44,6 +44,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="KisiIslemleriTest.cs" />
         <Compile Include="MetinIslemleriTest.cs" />
         <Compile Include="SayiIslemleriTest.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
