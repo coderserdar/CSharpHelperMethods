@@ -87,5 +87,22 @@ namespace CSharpHelperMethods.Test
         {
             return MetinIslemleri.TurkceKarakterleriDuzelt(metin);
         }
+        
+        [Test]
+        [TestCase("fıstıkçı şahap&amp;ccedil;", ExpectedResult = "fıstıkçı şahapç")]
+        [TestCase("uğulu&ouml;", ExpectedResult = "uğuluö")]
+        [TestCase("öğrenci&uuml;", ExpectedResult = "öğrenciü")]
+        public string UTF8DuzeltTest(string metin)
+        {
+            return MetinIslemleri.UTF8Duzelt(metin);
+        }
+        
+        [Test]
+        [TestCase("fıstıkçı şahap<.*?>", ExpectedResult = "fıstıkçı şahap")]
+        [TestCase("uğulu  ", ExpectedResult = "uğulu")]
+        public string HTMLDuzeltTest(string metin)
+        {
+            return MetinIslemleri.HTMLDuzelt(metin);
+        }
     }
 }
