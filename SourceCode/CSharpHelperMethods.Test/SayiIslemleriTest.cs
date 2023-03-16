@@ -11,6 +11,11 @@ namespace CSharpHelperMethods.Test
     [TestFixture]
     public class SayiIslemleriTest
     {
+        /// <summary>
+        /// Metnin sayısal olup olmadığı ile ilgili test metodudur
+        /// </summary>
+        /// <param name="metin">Girdi Metni</param>
+        /// <returns>Metnin Sayı Olup Olmadığı Bilgisi</returns>
         [Test]
         [TestCase("15", ExpectedResult = true)]
         [TestCase("15123132", ExpectedResult = true)]
@@ -21,6 +26,11 @@ namespace CSharpHelperMethods.Test
             return SayiIslemleri.SayisalMi(metin);
         }
         
+        /// <summary>
+        /// Metni sayıya çevirme ile ilgili test metodudur
+        /// </summary>
+        /// <param name="metin">Girdi Metni</param>
+        /// <returns>Metnin Sayı Hali</returns>
         [Test]
         [TestCase("15_05", ExpectedResult = 15.05)]
         [TestCase("456.11", ExpectedResult = 456.11)]
@@ -29,6 +39,11 @@ namespace CSharpHelperMethods.Test
             return SayiIslemleri.SayiHalineCevir(metin);
         }
         
+        /// <summary>
+        /// Girilen sayısal para bilgisini yazıya çevirmekle ilgili test metodudur
+        /// </summary>
+        /// <param name="sayi">Sayı Bilgisi</param>
+        /// <returns>Sayının Metinsel Hali</returns>
         [Test]
         [TestCase(1500, ExpectedResult = "BİNBEŞYÜZ TL SIFIR KR.")]
         [TestCase(456789.76, ExpectedResult = "DÖRTYÜZELLİALTIBİNYEDİYÜZSEKSENDOKUZ TL YETMİŞALTI KR.")]
