@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using CSharpHelperMethods.Library;
@@ -40,47 +39,10 @@ namespace CSharpHelperMethods.UI
         /// <param name="e">Event Arguments</param>
         private void cmbIslemTuru_SelectedIndexChanged(object sender, EventArgs e)
         {
-            #region Combobox'tan Seçilen Değere Göre İlgili Paneli Aktif Hale Getirme
-            switch (cmbIslemTuru.SelectedIndex)
-            {
-                // Metin İşlemleri
-                case 0:
-                    {
-                        PaneliErisilebilirKil("pnlMetinIslemleri");
-                        break;
-                    }
-                // Tarih İşlemleri
-                case 1:
-                    {
-                        PaneliErisilebilirKil("pnlTarihIslemleri");
-                        break;
-                    }
-                // Sayı İşlemleri
-                case 2:
-                    {
-                        PaneliErisilebilirKil("pnlSayiIslemleri");
-                        break;
-                    }
-                // Şifre İşlemleri
-                case 3:
-                    {
-                        PaneliErisilebilirKil("pnlSifreIslemleri");
-                        break;
-                    }
-                // Kişi İşlemleri
-                case 4:
-                    {
-                        PaneliErisilebilirKil("pnlKisiIslemleri");
-                        break;
-                    }
-                // Bunlar haricinde herhangi bir şey
-                default:
-                    {
-                        PaneliErisilebilirKil("Hicbiri");
-                        break;
-                    }
-            }
-            #endregion
+            var panelAdi = "Hicbiri";
+            if (OnemliBilgiler.PanelListesi.Any(j => j.Key == cmbIslemTuru.SelectedIndex))
+                panelAdi = OnemliBilgiler.PanelListesi.First(j => j.Key == cmbIslemTuru.SelectedIndex).Value;
+            PaneliErisilebilirKil(panelAdi);
         }
 
         /// <summary>
@@ -128,8 +90,8 @@ namespace CSharpHelperMethods.UI
         private static void listBox_MeasureItem(object sender, MeasureItemEventArgs e)
         {
             if (!(sender is ListBox listBox)) return;
-            e.ItemHeight = (int) e.Graphics
-                .MeasureString(listBox.Items[e.Index].ToString(), listBox.Font, listBox.Width).Height;
+            if (listBox.Items.Count > 0)
+                e.ItemHeight = (int) e.Graphics.MeasureString(listBox.Items[e.Index].ToString(), listBox.Font, listBox.Width).Height;
         }
 
         /// <summary>
@@ -143,7 +105,8 @@ namespace CSharpHelperMethods.UI
             if (!(sender is ListBox listBox)) return;
             e.DrawBackground();
             e.DrawFocusRectangle();
-            e.Graphics.DrawString(listBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
+            if (listBox.Items.Count > 0)
+                e.Graphics.DrawString(listBox.Items[e.Index].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
         }
         
         #endregion
